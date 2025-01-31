@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official UPI QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        canvas {
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+      h3 {
+            color: #343a40;
+            margin-bottom: 8px;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+      .footer {
+            width: 250px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/512px-UPI-Logo-vector.svg.png" alt="UPI Accepted Here" class="logo">
+        <h2>Sisodiya Ventures</h2>
+        <input type="text" id="text" placeholder="Enter Amount (INR)" oninput="generateQR()">
+        <canvas id="qrcode"></canvas>
+        <h3>Q930406851@ybl</h3>
+        <p>Scan and pay with any BHIM UPI app</p>
+        <div>
+            <img class="footer" src="https://ik.imagekit.io/pngserver/upi-api-footer.png">
+        </div>
+    </div>
+    
+    <script>
+        function generateQR() {
+            let text = document.getElementById('text').value;
+            let qr = new QRious({
+                value: 'upi://pay?pa=Q930406851@ybl&pn=Sisodiya Ventures&am=' + text + '&cu=INR',
+                element: document.getElementById('qrcode'),
+                size: 200
+            });
+        }
+    </script>
+</body>
+</html>
