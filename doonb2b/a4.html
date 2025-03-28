@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Info</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .input-container {
+        margin: 10mm;
+      }
+      #sku-input {
+        width: 100%;
+        padding: 5mm;
+        font-size: 16px;
+      }
+      #submit-btn {
+        padding: 5mm 10mm;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #product-info {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 10mm;
+        box-sizing: border-box;
+      }
+      .product-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 5mm;
+      }
+      .product-sku {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5mm;
+      }
+      .product-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .product-left {
+        width: 153mm;
+        height: 153mm;
+      }
+      .product-left img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .product-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 430px;
+      }
+      .product-price {
+        font-size: 96px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .product-small-img {
+        width: 104mm;
+        height: 104mm;
+        margin: 0 auto;
+      }
+      .product-small-img img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      @media print {
+        .input-container {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input-container">
+      <div>
+        <input type="text" id="sku-input" placeholder="Enter URL..." />
+      </div>
+      <div>
+        <button id="submit-btn">Submit</button>
+      </div>
+    </div>
+    <div id="product-info">
+      <!-- Product info will be dynamically inserted here -->
+    </div>
+
+    <script>
+      document
+        .getElementById('submit-btn')
+        .addEventListener('click', function () {
+          const urlInput = document.getElementById('sku-input').value.trim();
+          if (!urlInput) {
+            alert('Please enter a valid URL.');
+            return;
+          }
+
+          // Remove params and add .json
+          const cleanUrl = urlInput.split('?')[0] + '.json';
+
+          // Fetch JSON data
+          fetch(cleanUrl)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.json();
+            })
+            .then((data) => {
+              displayProductInfo(data.product);
+            })
+            .catch((error) => {
+              console.error('Error fetching product info:', error);
+              document.getElementById('product-info').innerHTML =
+                '<p>Error loading product info.</p>';
+            });
+        });
+
+      function displayProductInfo(product) {
+        const productInfo = document.getElementById('product-info');
+
+        // Extracting required data
+        const title = product.title || 'N/A';
+        const price =
+          product.variants.length > 0
+            ? `₹${Math.round(product.variants[0].price)}`
+            : 'N/A';
+        const sku =
+          product.variants.length > 0 ? product.variants[0].sku : 'N/A';
+        const images = product.images.slice(0, 2);
+
+        productInfo.innerHTML = `
+          <div class="product-title">${title}</div>
+          <div class="product-sku">${sku}</div>
+          <div class="product-container">
+            <div class="product-left">
+              <img src="${images[0]?.src || ''}" alt="Main Product Image" />
+            </div>
+            <div class="product-right">
+              <div class="product-price">${price}</div>
+              <div class="product-small-img">
+                <img src="${images[1]?.src || ''}" alt="Second Product Image" />
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    </script>
+  </body>
+</html>
