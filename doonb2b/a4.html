@@ -22,6 +22,15 @@
         font-size: 16px;
         cursor: pointer;
       }
+      #price-input-container {
+        margin-top: 5mm;
+      }
+      #price-input {
+        width: 150px;
+        padding: 5px;
+        font-size: 18px;
+        text-align: center;
+      }
       #product-info {
         width: 297mm;
         height: 210mm;
@@ -80,6 +89,9 @@
         .input-container {
           display: none;
         }
+        #price-input-container {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -90,6 +102,9 @@
       </div>
       <div>
         <button id="submit-btn">Submit</button>
+      </div>
+      <div id="price-input-container" style="display: none">
+        <input type="number" id="price-input" value="" />
       </div>
     </div>
     <div id="product-info">
@@ -132,10 +147,11 @@
 
         // Extracting required data
         const title = product.title || 'N/A';
-        const price =
+        const priceRaw =
           product.variants.length > 0
-            ? `₹${Math.round(product.variants[0].price)}`
+            ? Math.round(product.variants[0].price)
             : 'N/A';
+        const price = `₹${priceRaw}`;
         const sku =
           product.variants.length > 0 ? product.variants[0].sku : 'N/A';
         const images = product.images.slice(0, 2);
@@ -148,13 +164,27 @@
               <img src="${images[0]?.src || ''}" alt="Main Product Image" />
             </div>
             <div class="product-right">
-              <div class="product-price">${price}</div>
+              <div class="product-price" id="display-price">${price}</div>
               <div class="product-small-img">
                 <img src="${images[1]?.src || ''}" alt="Second Product Image" />
               </div>
             </div>
           </div>
         `;
+
+        // Show price input box and prefill price
+        const priceInputContainer = document.getElementById(
+          'price-input-container'
+        );
+        const priceInput = document.getElementById('price-input');
+        priceInput.value = priceRaw;
+        priceInputContainer.style.display = 'block';
+
+        // Update price dynamically when input changes
+        priceInput.addEventListener('input', function () {
+          const newPrice = `₹${Math.round(priceInput.value)}`;
+          document.getElementById('display-price').innerText = newPrice;
+        });
       }
     </script>
   </body>
