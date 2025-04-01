@@ -79,17 +79,30 @@
         height: 104mm;
         margin: 0 auto;
       }
+      .product-verysmall-img {
+        width: 20mm;
+        height: 20mm;
+        margin: 0 auto;
+        margin-left: 3mm;
+      }
       .product-small-img img {
         width: 100%;
         height: 100%;
         border: 1px solid #ccc;
         border-radius: 5px;
+        cursor: pointer;
+      }
+      .selected-thumbnail {
+        border: 3px solid blue !important;
       }
       @media print {
         .input-container {
           display: none;
         }
         #price-input-container {
+          display: none;
+        }
+        .image-selection-container {
           display: none;
         }
       }
@@ -154,23 +167,43 @@
         const price = `₹${priceRaw}`;
         const sku =
           product.variants.length > 0 ? product.variants[0].sku : 'N/A';
-        const images = product.images.slice(0, 2);
+        const images = product.images;
+
+        let mainImage = images[0]?.src || '';
+        let secondaryImage = images[1]?.src || '';
 
         productInfo.innerHTML = `
           <div class="product-title">${title}</div>
           <div class="product-sku">${sku}</div>
           <div class="product-container">
             <div class="product-left">
-              <img src="${images[0]?.src || ''}" alt="Main Product Image" />
+              <img src="${mainImage}" alt="Main Product Image" id="main-image" />
             </div>
             <div class="product-right">
               <div class="product-price" id="display-price">${price}</div>
               <div class="product-small-img">
-                <img src="${images[1]?.src || ''}" alt="Second Product Image" />
+                <img src="${secondaryImage}" alt="Second Product Image" id="secondary-image" />
               </div>
             </div>
           </div>
+          <div  class="image-selection-container">
+            <div>
+            <h3>Main Image Selection</h3>
+            <div id="main-image-selection"></div>
+          </div>
+          <div>
+            <h3>Secondary Image Selection</h3>
+            <div id="secondary-image-selection"></div>
+          </div>
+          </div>
+
         `;
+
+        // Render image thumbnails
+        renderImageSelection(images, 'main');
+        renderImageSelection(images, 'secondary');
+        highlightSelectedThumbnail('main', 0);
+        highlightSelectedThumbnail('secondary', 1);
 
         // Show price input box and prefill price
         const priceInputContainer = document.getElementById(
@@ -185,6 +218,40 @@
           const newPrice = `₹${Math.round(priceInput.value)}`;
           document.getElementById('display-price').innerText = newPrice;
         });
+      }
+
+      function renderImageSelection(images, type) {
+        const container = document.getElementById(`${type}-image-selection`);
+        images.forEach((image, index) => {
+          const imgElement = document.createElement('img');
+          imgElement.src = image.src;
+          imgElement.alt = `${type} image ${index + 1}`;
+          imgElement.classList.add('product-verysmall-img');
+          imgElement.addEventListener('click', function () {
+            updateImage(type, image.src);
+            highlightSelectedThumbnail(type, index);
+          });
+          container.appendChild(imgElement);
+        });
+      }
+
+      function updateImage(type, src) {
+        if (type === 'main') {
+          document.getElementById('main-image').src = src;
+        } else if (type === 'secondary') {
+          document.getElementById('secondary-image').src = src;
+        }
+      }
+
+      function highlightSelectedThumbnail(type, index) {
+        const selectionContainer = document.getElementById(
+          `${type}-image-selection`
+        );
+        const thumbnails = selectionContainer.getElementsByTagName('img');
+        Array.from(thumbnails).forEach((thumbnail) =>
+          thumbnail.classList.remove('selected-thumbnail')
+        );
+        thumbnails[index].classList.add('selected-thumbnail');
       }
     </script>
   </body>
