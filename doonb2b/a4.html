@@ -125,6 +125,17 @@
     </div>
 
     <script>
+      // --- URL Param Handling ---
+      window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const prefilledUrl = params.get('url');
+        if (prefilledUrl) {
+          const input = document.getElementById('sku-input');
+          input.value = prefilledUrl;
+          document.getElementById('submit-btn').click(); // Auto-submit
+        }
+      });
+
       document
         .getElementById('submit-btn')
         .addEventListener('click', function () {
@@ -160,10 +171,21 @@
 
         // Extracting required data
         const title = product.title || 'N/A';
-        const priceRaw =
+
+        // Extract URL price param
+        const params = new URLSearchParams(window.location.search);
+        const priceOverride = params.get('price');
+        const defaultPrice =
           product.variants.length > 0
             ? Math.round(product.variants[0].price)
             : 'N/A';
+
+        // If URL price param is valid, use it, else fallback to product price
+        const priceRaw =
+          priceOverride && !isNaN(priceOverride)
+            ? Math.round(Number(priceOverride))
+            : defaultPrice;
+
         const price = `₹${priceRaw}`;
         const sku =
           product.variants.length > 0 ? product.variants[0].sku : 'N/A';
