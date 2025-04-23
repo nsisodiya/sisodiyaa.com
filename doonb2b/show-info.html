@@ -20,10 +20,17 @@
       }
       #scanner-container {
         width: 100%;
-        max-width: 200px;
-        aspect-ratio: 3/4;
         background: #000;
         position: relative;
+      }
+      #scanner-container canvas {
+        display: none;
+      }
+      .price-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-size: 23px;
       }
       #product-info {
         margin-top: 20px;
@@ -37,8 +44,7 @@
         max-width: 400px;
       }
       #product-info img {
-        width: 120px;
-        height: 120px;
+        width: 100%;
         object-fit: contain;
         margin-bottom: 10px;
       }
@@ -62,10 +68,13 @@
     <div id="scanner-container"></div>
     <div id="product-info">
       <img id="product-image" src="" alt="Product Image" />
-      <h2 id="product-name"></h2>
-      <p>Item Code: <span id="item-code"></span></p>
-      <p>Purchase Price: <span class="price" id="purchase-price"></span></p>
-      <p>Sale Price: <span class="price" id="sale-price"></span></p>
+      <h2 style="font-size: 22px" id="product-name"></h2>
+      <p><span id="sku"></span></p>
+      <div class="price-info">
+        <p>Purchase Price: <span class="price" id="purchase-price"></span></p>
+        <p>Sale Price: <span class="price" id="sale-price"></span></p>
+      </div>
+
       <button onclick="startScanner()">Scan Again</button>
     </div>
 
@@ -75,10 +84,11 @@
         3700: {
           itemcode: '3700',
           sku: '3700_star_soap_case',
+          title: 'Star Shaped Self Design Soap Case Holder for Bathroom',
           image:
             'https://deodap.in/cdn/shop/files/66788dae-7b9e-4a70-bd70-4c72d975de2b.jpg?v=1737630311&width=300',
-          purchasePrice: '₹16',
-          salePrice: '₹9.55'
+          salePrice: '₹16',
+          purchasePrice: '₹9.55'
         }
       };
 
@@ -124,8 +134,8 @@
       function showProduct(data) {
         document.getElementById('scanner-container').style.display = 'none';
         document.getElementById('product-image').src = data.image;
-        document.getElementById('product-name').innerText = data.sku;
-        document.getElementById('item-code').innerText = data.itemcode;
+        document.getElementById('product-name').innerText = data.title;
+        document.getElementById('sku').innerText = data.sku;
         document.getElementById('purchase-price').innerText =
           data.purchasePrice;
         document.getElementById('sale-price').innerText = data.salePrice;
