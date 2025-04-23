@@ -74,21 +74,16 @@
       const skuData = {
         3700: {
           itemcode: '3700',
-          sku: '3700_start_soap_case',
-          image: 'https://via.placeholder.com/120x120.png?text=Product+1',
-          purchasePrice: '₹50',
-          salePrice: '₹99'
-        },
-        987654321098: {
-          itemcode: 'ITEM002',
-          sku: '987654321098',
-          image: 'https://via.placeholder.com/120x120.png?text=Product+2',
-          purchasePrice: '₹30',
-          salePrice: '₹60'
+          sku: '3700_star_soap_case',
+          image:
+            'https://deodap.in/cdn/shop/files/66788dae-7b9e-4a70-bd70-4c72d975de2b.jpg?v=1737630311&width=300',
+          purchasePrice: '₹16',
+          salePrice: '₹9.55'
         }
       };
 
       function startScanner() {
+        document.getElementById('scanner-container').style.display = 'block';
         document.getElementById('product-info').style.display = 'none';
         Quagga.stop();
 
@@ -127,6 +122,7 @@
       }
 
       function showProduct(data) {
+        document.getElementById('scanner-container').style.display = 'none';
         document.getElementById('product-image').src = data.image;
         document.getElementById('product-name').innerText = data.sku;
         document.getElementById('item-code').innerText = data.itemcode;
