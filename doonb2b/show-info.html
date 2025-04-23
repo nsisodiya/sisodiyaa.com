@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scan & Show Product</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #f5f7fa;
+        color: #333;
+      }
+      h1 {
+        margin: 1rem 0;
+      }
+      #scanner-container {
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 3/4;
+        background: #000;
+        position: relative;
+      }
+      #product-info {
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+      }
+      #product-info img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+      .price {
+        font-weight: bold;
+        color: #236591;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #236591;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Scan & Show Product</h1>
+    <div id="scanner-container"></div>
+    <div id="product-info">
+      <img id="product-image" src="" alt="Product Image" />
+      <h2 id="product-name"></h2>
+      <p>Item Code: <span id="item-code"></span></p>
+      <p>Purchase Price: <span class="price" id="purchase-price"></span></p>
+      <p>Sale Price: <span class="price" id="sale-price"></span></p>
+      <button onclick="startScanner()">Scan Again</button>
+    </div>
+
+    <script src="https://unpkg.com/@ericblade/quagga2@1.2.6/dist/quagga.min.js"></script>
+    <script>
+      const skuData = {
+        3700: {
+          itemcode: '3700',
+          sku: '3700_start_soap_case',
+          image: 'https://via.placeholder.com/120x120.png?text=Product+1',
+          purchasePrice: '₹50',
+          salePrice: '₹99'
+        },
+        987654321098: {
+          itemcode: 'ITEM002',
+          sku: '987654321098',
+          image: 'https://via.placeholder.com/120x120.png?text=Product+2',
+          purchasePrice: '₹30',
+          salePrice: '₹60'
+        }
+      };
+
+      function startScanner() {
+        document.getElementById('product-info').style.display = 'none';
+        Quagga.stop();
+
+        Quagga.init(
+          {
+            inputStream: {
+              name: 'Live',
+              type: 'LiveStream',
+              target: document.querySelector('#scanner-container'),
+              constraints: {
+                facingMode: 'environment'
+              }
+            },
+            decoder: {
+              readers: ['ean_reader', 'code_128_reader', 'upc_reader']
+            }
+          },
+          function (err) {
+            if (err) {
+              console.error(err);
+              return;
+            }
+            Quagga.start();
+          }
+        );
+
+        Quagga.onDetected((result) => {
+          const code = result.codeResult.code;
+          if (skuData[code]) {
+            showProduct(skuData[code]);
+            Quagga.stop();
+          } else {
+            console.warn('SKU not found:', code);
+          }
+        });
+      }
+
+      function showProduct(data) {
+        document.getElementById('product-image').src = data.image;
+        document.getElementById('product-name').innerText = data.sku;
+        document.getElementById('item-code').innerText = data.itemcode;
+        document.getElementById('purchase-price').innerText =
+          data.purchasePrice;
+        document.getElementById('sale-price').innerText = data.salePrice;
+        document.getElementById('product-info').style.display = 'block';
+      }
+
+      // Start scanning on page load
+      window.addEventListener('load', startScanner);
+    </script>
+  </body>
+</html>
