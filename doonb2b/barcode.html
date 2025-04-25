@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sticker Generator</title>
+    <script
+      lang="javascript"
+      src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"
+    ></script>
+    <style>
+      @page {
+        size: 101.6mm 330.2mm;
+        margin: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        width: 101.6mm;
+        height: 330.2mm;
+        box-sizing: border-box;
+        background: #fff;
+        /* border: 1px solid red; */
+        font-family: sans-serif;
+      }
+
+      .page-button-container {
+        display: flex;
+        gap: 8px;
+        margin: 10px 0;
+        flex-wrap: wrap;
+      }
+
+      .page-button {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .page-button:hover {
+        background-color: #f0f0f0;
+      }
+
+      .page-button.active {
+        background-color: #236591;
+        color: white;
+        border-color: #236591;
+      }
+
+      .toplayer {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        width: 101.6mm;
+        height: 330.2mm;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+        /* padding-left: 1mm; */
+      }
+
+      .sticker {
+        box-sizing: border-box;
+        /* padding: 2mm; */
+        /* padding-top: 0.5mm; */
+        width: 50mm;
+        /* 5.6mm on 11 = 0.509090909 , 28.5-5.6/11 = 27.9909091*/
+        height: 25mm;
+        /* border: 0.05mm solid red; */
+        /* margin-bottom: 0mm; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3.175mm;
+      }
+
+      .sticker svg {
+        width: 45mm;
+      }
+
+      .sticker .price {
+        margin-top: 1mm;
+        font-size: 4mm;
+        text-align: center;
+        display: flex;
+        align-items: center;
+      }
+
+      .sticker .sku {
+        font-size: 2.2mm;
+        text-align: center;
+        font-family: monospace;
+        max-width: 48mm;
+        overflow: hidden;
+      }
+
+      .controls {
+        position: absolute;
+        left: 150mm;
+        top: 10mm;
+        width: 600px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ccc;
+        padding: 5px;
+      }
+
+      td[contenteditable='true'] {
+        background: #f9f9f9;
+      }
+
+      button {
+        margin: 5px;
+      }
+
+      @media print {
+        .controls {
+          display: none;
+        }
+      }
+      #xls-drop-zone {
+        border: 2px dashed #888;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+        background: #f3f3f3;
+        cursor: pointer;
+      }
+
+      #xls-drop-zone.hover {
+        background: #e0ffe0;
+        border-color: green;
+      }
+      .toplayer .sticker:nth-child(23) {
+        height: 15mm;
+        flex-direction: row;
+      }
+
+      .toplayer .sticker:nth-child(24) {
+        height: 15mm;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <h2>Sticker Data</h2>
+      <div id="xls-drop-zone" onclick="fileInput.click()">
+        📁 Drop XLS file here or click to upload
+      </div>
+      <input
+        type="file"
+        id="fileInput"
+        accept=".xls,.xlsx"
+        style="display: none"
+      />
+      <button onclick="localStorage.removeItem('stickerTableData')">
+        Clear Data
+      </button>
+      <button onclick="addRow()">Add Row</button>
+      <button onclick="generateStickersFromTable()">Generate Stickers</button>
+      <button
+        onclick="([...document.querySelectorAll('a')]).forEach((a,i)=>setTimeout(()=>a.click(),i*500))"
+      >
+        Click Links
+      </button>
+      <button onclick="window.print()">Print</button>
+
+      <h3>Select Page:</h3>
+      <div id="page-buttons" class="page-button-container"></div>
+
+      <pre id="output"></pre>
+
+      <table id="csv-table">
+        <thead>
+          <tr>
+            <th>Serial</th>
+            <th>Code</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Item Per Bag</th>
+            <th>Delete</th>
+            <th>Print</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="toplayer" class="toplayer"></div>
+
+    <div id="table-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script>
+      // generateMasterTable();
+
+      const dropzone = document.getElementById('xls-drop-zone');
+      const fileInput = document.getElementById('fileInput');
+
+      let allStickers = [];
+      const totalStickersPerPage = 24;
+
+      function parseCSV(csv) {
+        const lines = csv.trim().split('\n');
+        const headers = lines[0].split(',');
+        const data = [];
+
+        for (let i = 1; i < lines.length; i++) {
+          const row = lines[i].split(',');
+          const entry = {};
+          headers.forEach((h, j) => {
+            entry[h.trim()] = row[j] ? row[j].trim() : '';
+          });
+          data.push(entry);
+        }
+
+        return data;
+      }
+
+      function renderPage(pageNumber) {
+        // Highlight active button
+        document.querySelectorAll('.page-button').forEach((btn) => {
+          btn.classList.remove('active');
+          if (parseInt(btn.textContent) === pageNumber) {
+            btn.classList.add('active');
+          }
+        });
+
+        pageNumber = parseInt(pageNumber);
+        const container = document.getElementById('toplayer');
+        container.innerHTML = '';
+        const start = (pageNumber - 1) * (totalStickersPerPage - 2);
+        const end = Math.min(
+          start + (totalStickersPerPage - 2),
+          allStickers.length
+        );
+        const stickers = allStickers.slice(start, end);
+
+        // If the length is odd, add one empty sticker
+        if (stickers.length % 2 === 0) {
+          stickers.push({
+            code: '',
+            sku: '',
+            price: ''
+          });
+        }
+        stickers.forEach((item, index) => {
+          const div = document.createElement('div');
+          div.className = 'sticker';
+
+          if (item.sku !== '') {
+            div.innerHTML = `
+                    <div class="price"><span style="font-weight: bold;font-family: Courier New;">DoonB2B Price: </span><span style="font-family: monospace;">${item.price}</span></div>
+                    <div class="sku">${item.sku}</div>
+                    <svg id="barcode${index}"></svg>
+                  `;
+            container.appendChild(div);
+
+            JsBarcode(`#barcode${index}`, item.code, {
+              format: 'CODE128',
+              displayValue: true,
+              fontSize: 10,
+              height: 35,
+              margin: 4
+            });
+          } else {
+            container.appendChild(div);
+          }
+        });
+        const pageNumDiv = document.createElement('div');
+        pageNumDiv.className = 'sticker';
+        pageNumDiv.innerHTML = `<span><b>Page ${pageNumber}</b></span><span style="transform: scale(-1);">Page ${pageNumber}</span>`;
+        container.appendChild(pageNumDiv);
+      }
+
+      function getTableData() {
+        const rows = document.querySelectorAll('#csv-table tbody tr');
+        const data = [];
+        rows.forEach((row) => {
+          const cells = row.querySelectorAll('td');
+          data.push({
+            serial: cells[0].innerText.trim(),
+            code: cells[1].innerText.trim(),
+            sku: cells[2].innerText.trim(),
+            price: cells[3].innerText.trim(),
+            quantity: cells[4].innerText.trim(),
+            items_per_bag: cells[5].innerText.trim()
+          });
+        });
+        return data;
+      }
+
+      function generateMasterTable() {
+        const data = window.items;
+        if (!data || !data.length) return;
+
+        const container = document.getElementById('table-container');
+
+        // Create table element
+        const table = document.createElement('table');
+
+        // Dynamically generate thead
+        const thead = document.createElement('thead');
+        const headRow = document.createElement('tr');
+        Object.keys(data[0]).forEach((key) => {
+          const th = document.createElement('th');
+          th.textContent = key;
+          headRow.appendChild(th);
+        });
+        thead.appendChild(headRow);
+        table.appendChild(thead);
+
+        // Dynamically generate tbody
+        const tbody = document.createElement('tbody');
+        data.forEach((item) => {
+          const row = document.createElement('tr');
+          Object.values(item).forEach((val) => {
+            const td = document.createElement('td');
+            td.textContent = val;
+            row.appendChild(td);
+          });
+          tbody.appendChild(row);
+        });
+        table.appendChild(tbody);
+
+        container.appendChild(table);
+      }
+
+      function formatUnitPrice(price, quantity) {
+        const perUnit = price / parseInt(quantity);
+        return perUnit % 1 === 0 ? perUnit.toFixed(0) : perUnit.toFixed(2);
+      }
+
+      function generateStickersFromTable() {
+        const data = getTableData();
+        allStickers = [];
+
+        data.forEach((item) => {
+          const quantity = parseInt(item.quantity);
+          if (item.items_per_bag && item.items_per_bag !== '') {
+            const quantityPcs = parseInt(item.items_per_bag) * quantity;
+            for (let j = 0; j < quantityPcs; j++) {
+              allStickers.push({
+                code: item.code,
+                sku: item.sku,
+                price: formatUnitPrice(item.price, item.items_per_bag)
+              });
+            }
+          } else {
+            for (let i = 0; i < quantity; i++) {
+              allStickers.push({
+                code: item.code,
+                sku: item.sku,
+                price: item.price
+              });
+            }
+          }
+        });
+
+        const pages = Math.ceil(
+          allStickers.length / (totalStickersPerPage - 2)
+        );
+
+        const buttonContainer = document.getElementById('page-buttons');
+        buttonContainer.innerHTML = '';
+        for (let i = 1; i <= pages; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = i;
+          btn.className = 'page-button';
+          btn.onclick = () => renderPage(i);
+          buttonContainer.appendChild(btn);
+        }
+
+        renderPage(1);
+      }
+
+      function deleteRow(button) {
+        button.closest('tr').remove();
+        saveTableToLocalStorage();
+      }
+
+      function addRow() {
+        const tbody = document.querySelector('#csv-table tbody');
+        const row = document.createElement('tr');
+        row.innerHTML = `
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true">1</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+              `;
+        tbody.appendChild(row);
+        addContentEditListeners();
+        saveTableToLocalStorage();
+      }
+
+      function addContentEditListeners() {
+        document
+          .querySelectorAll('#csv-table td[contenteditable="true"]')
+          .forEach((cell) => {
+            cell.removeEventListener('input', saveTableToLocalStorage);
+            cell.addEventListener('input', saveTableToLocalStorage);
+          });
+      }
+      function addMissingColumnsInData(data) {
+        // Modified version of data
+        const modifiedData = data.map((entry) => {
+          const matchedItem = items.find((item) =>
+            item.sku.endsWith(entry.sku)
+          );
+          const matchedItemExtra = extrametadata[entry.sku];
+
+          return {
+            ...entry,
+            code: matchedItem?.code || null,
+            price: matchedItem?.price || null,
+            handle: matchedItem?.handle || null,
+            items_per_bag: matchedItemExtra?.items_per_bag || ''
+          };
+        });
+        return modifiedData;
+      }
+
+      function saveTableToLocalStorage() {
+        const data = getTableData();
+        localStorage.setItem('stickerTableData', JSON.stringify(data));
+      }
+
+      function loadTableFromCSV(csv) {
+        const data = addMissingColumnsInData(parseCSV(csv));
+        console.log(data);
+
+        // Modified version of data
+        const modifiedData = data.map((entry) => {
+          const matchedItem = items.find((item) =>
+            item.sku.endsWith(entry.sku)
+          );
+          const matchedItemExtra = extrametadata[entry.sku];
+          return {
+            ...entry,
+            code: matchedItem?.code || null,
+            price: matchedItem?.price || null,
+            items_per_bag: matchedItemExtra?.items_per_bag || ''
+          };
+        });
+
+        const tbody = document.querySelector('#csv-table tbody');
+        tbody.innerHTML = '';
+        data.forEach((item, i) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+                  <td contenteditable="true">${item.serial}</td>
+                  <td ${highlightIfNull(item.code)} contenteditable="true">${
+            item.code
+          }</td>
+                  <td ${highlightIfMoreThan36Chars(
+                    item.sku
+                  )} contenteditable="true">${item.sku}</td>
+                  <td ${highlightIfNull(item.price)} contenteditable="true">${
+            item.price
+          }</td>
+                  <td ${highlightIfNull(
+                    item.quantity
+                  )} contenteditable="true">${item.quantity}</td>
+                  <td contenteditable="true">${item.items_per_bag}</td>
+                  <td><div style="cursor: pointer;display: inline-block;" onclick="deleteRow(this)">🗑️</div></td>
+                  <td><a target="_blank" rel="noopener noreferrer" href="http://localhost:8080/product-info-on-a4-paper.html?url=https://deodap.in/products/${
+                    item.handle
+                  }&price=${item.price}">🖨</a></td>
+                `;
+          tbody.appendChild(row);
+        });
+        addContentEditListeners();
+        saveTableToLocalStorage();
+      }
+
+      // Drag and Drop XLS Support
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('hover');
+      });
+
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.classList.remove('hover');
+      });
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('hover');
+
+        const file = e.dataTransfer.files[0];
+        if (!file) return;
+
+        handleXLSFile(file);
+      });
+
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        handleXLSFile(file);
+      });
+
+      function processInvoiceCSV(d) {
+        const result = d.INVOICE;
+        const lines = result.split('\n');
+        let data = lines.map((line) =>
+          line.split(',').map((item) => item.trim().toLowerCase())
+        );
+        data = data.filter((row) => /^\d+/.test(row[0]));
+
+        const processedData = data.map((row) => {
+          const quantity = parseFloat(row[9]?.replace('no', '').trim()) || 0;
+          return [row[1], quantity];
+        });
+        const headers = 'serial,sku,quantity';
+        const csvData = [
+          headers,
+          ...processedData.map(
+            ([sku, quantity], i) => `${i + 1},${sku},${quantity}`
+          )
+        ].join('\n');
+        return csvData;
+      }
+
+      function highlightIfMoreThan36Chars(value) {
+        // if (value.length > 37) {
+        //   return 'style="background-color: red; border: 2px solid darkred; color: white;"';
+        // }
+        return ''; // Return an empty string if no highlighting needed
+      }
+      // Function to apply inline styles based on content
+      function highlightIfNull(value) {
+        if (value === null || value === 'null' || value === '') {
+          return 'style="background-color: red; border: 2px solid darkred; color: white;"';
+        }
+        return ''; // Return an empty string if no highlighting needed
+      }
+
+      function handleXLSFile(file) {
+        const isXls =
+          file.type === 'application/vnd.ms-excel' ||
+          file.name.endsWith('.xls') ||
+          file.name.endsWith('.xlsx');
+        if (!isXls) {
+          alert('Please drop a valid .xls or .xlsx file.');
+          return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+          try {
+            const data = new Uint8Array(event.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+
+            const csvData = {};
+            workbook.SheetNames.forEach((sheetName) => {
+              const worksheet = workbook.Sheets[sheetName];
+              const csv = XLSX.utils.sheet_to_csv(worksheet);
+              csvData[sheetName] = csv;
+            });
+
+            const csvSkuQuantity = processInvoiceCSV(csvData);
+            console.log('csvSkuQuantity', csvSkuQuantity);
+            loadTableFromCSV(csvSkuQuantity);
+            // document.getElementById('output').textContent = csvSkuQuantity;
+          } catch (error) {
+            alert('Conversion failed');
+            console.error('Error:', error);
+          }
+        };
+
+        reader.readAsArrayBuffer(file);
+      }
+
+      // // Initial default CSV load
+      const initialCSV = `serial,code,sku,price,quantity
+      1,0062,0062_smart_kitchen_basket,141,6
+      2,14024,14024_lcd_drawing_pen_case_blue_1pc,180,10
+      3,17746,17746_beauty_set_trolley_at174,831,6`;
+
+      window.onafterprint = () => {
+        const buttons = document.querySelectorAll('.page-button');
+        const buttonArray = Array.from(buttons);
+        const currentIndex = buttonArray.findIndex((btn) =>
+          btn.classList.contains('active')
+        );
+
+        if (currentIndex !== -1 && currentIndex < buttonArray.length - 1) {
+          const nextButton = buttonArray[currentIndex + 1];
+          nextButton.click();
+
+          // // Wait for DOM update before printing next
+          // setTimeout(() => {
+          //   window.print();
+          // }, 2500); // adjust delay if needed for your content to load/render
+        }
+      };
+
+      window.onload = () => {
+        const saved = localStorage.getItem('stickerTableData');
+        if (saved) {
+          const data = JSON.parse(saved);
+          const csv =
+            'serial,code,sku,price,quantity\n' +
+            data
+              .map(
+                (d) => `${d.serial},${d.code},${d.sku},${d.price},${d.quantity}`
+              )
+              .join('\n');
+          loadTableFromCSV(csv);
+        } else {
+          loadTableFromCSV(initialCSV);
+        }
+      };
+    </script>
+  </body>
+</html>
