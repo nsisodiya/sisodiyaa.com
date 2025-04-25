@@ -168,6 +168,7 @@
         document.getElementById('scanner-container').style.display = 'none';
         const carousel = document.getElementById('image-carousel');
         carousel.innerHTML = '';
+        carousel.scrollLeft = 0;  // Reset the scroll position
         data.images.forEach((imgUrl) => {
           const img = document.createElement('img');
           img.src = imgUrl;
