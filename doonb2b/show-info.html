@@ -284,6 +284,8 @@
         const itemCode = urlParams.get('itemCode');
         if (itemCode && window.productInfo[itemCode]) {
           showProduct(window.productInfo[itemCode]);
+        } else {
+          startScanner();
         }
       };
     </script>
