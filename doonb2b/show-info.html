@@ -4,11 +4,23 @@
     <meta charset="UTF-8" />
     <title>DoonB2B Product Info</title>
     <style>
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
       body {
         font-family: 'Segoe UI', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
       }
       #scanner-container {
         width: 100%;
@@ -25,7 +37,7 @@
         display: none;
       }
       .price-info {
-        font-size: 35px;
+        font-size: 60px;
         font-weight: bold;
         color: #236591;
       }
@@ -66,13 +78,14 @@
       }
       button {
         width: 100%;
-        padding: 15px;
-        font-size: 30px;
+        padding: 24px;
+        font-size: 60px;
         border: none;
         border-radius: 8px;
         margin-top: 10px;
         cursor: pointer;
       }
+
       .scan-again {
         background: #236591;
         color: #fff;
@@ -85,20 +98,11 @@
         background: #f0ad4e;
         color: white;
       }
-      .loading {
-        text-align: center;
-        padding: 20px;
-        font-size: 24px;
-        color: #236591;
-      }
     </style>
   </head>
 
   <body>
-    <button class="scan-again" onclick="startScanner()">Scan Product</button>
-
     <div id="scanner-container"></div>
-
     <div id="product-info">
       <h2 id="product-name"></h2>
       <p><span id="sku"></span></p>
@@ -112,10 +116,7 @@
       </button>
       <button class="copy-link" onclick="copyLink()">Copy Link</button>
     </div>
-
-    <div id="loading" class="loading" style="display: none">
-      Loading Product...
-    </div>
+    <button class="scan-again" onclick="startScanner()">Scan Product</button>
 
     <script src="https://unpkg.com/@ericblade/quagga2@1.2.6/dist/quagga.min.js"></script>
     <script src="./public-product-info.js"></script>
@@ -127,7 +128,6 @@
         clearItemCodeFromUrl();
         document.getElementById('scanner-container').style.display = 'block';
         document.getElementById('product-info').style.display = 'none';
-        document.getElementById('loading').style.display = 'none';
 
         if (quaggaStarted) {
           Quagga.stop();
@@ -169,7 +169,6 @@
       }
 
       function showProduct(data) {
-        document.getElementById('loading').style.display = 'block';
         document.getElementById('scanner-container').style.display = 'none';
 
         setTimeout(() => {
@@ -197,7 +196,6 @@
           }
 
           document.getElementById('product-info').style.display = 'block';
-          document.getElementById('loading').style.display = 'none';
         }, 400);
       }
 
