@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>DoonB2B Product Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Page</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/@ericblade/quagga2@1.2.6/dist/quagga.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./public-product-info.js"></script>
     <style>
-      html {
-        box-sizing: border-box;
-      }
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
-      body {
-        font-family: 'Segoe UI', sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        justify-content: space-between;
-      }
       #scanner-container {
         width: 100%;
         position: relative;
@@ -36,99 +26,201 @@
       #scanner-container canvas {
         display: none;
       }
-      .price-info {
-        font-size: 60px;
-        font-weight: bold;
-        color: #236591;
-      }
-      #product-info {
-        box-sizing: border-box;
-        padding: 20px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        display: none;
-        text-align: center;
-        width: 100%;
-      }
-      #product-info #product-name {
-        font-size: 40px;
-        color: #236591;
-        font-weight: bold;
-      }
-      #product-info #sku {
-        font-size: 30px;
-        color: #236591;
-        font-weight: bold;
-      }
-      .carousel {
-        overflow-x: auto;
-        display: flex;
-        scroll-snap-type: x mandatory;
-        gap: 10px;
-        margin: 20px 0;
-      }
-      .carousel img {
-        scroll-snap-align: center;
-        flex-shrink: 0;
-        width: 100%;
-        max-width: 86%;
-        border-radius: 8px;
-        object-fit: contain;
-      }
-      button {
-        width: 100%;
-        padding: 24px;
-        font-size: 60px;
-        border: none;
-        border-radius: 8px;
-        margin-top: 10px;
-        cursor: pointer;
-      }
 
-      .scan-again {
-        background: #236591;
-        color: #fff;
-        margin-bottom: 200px;
+      html {
+        box-sizing: border-box;
       }
-      .share-whatsapp {
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: #f9f9f9;
+      }
+      header {
+        background: white;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      header img {
+        width: 100%;
+      }
+      .product {
+        flex: 1;
+        overflow-y: auto;
+        padding: 15px;
+        padding-bottom: 80px; /* space for bottom button */
+        display: none;
+      }
+      .product-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+      .product-sku {
+        color: #666;
+        margin: 5px 0;
+      }
+      .product-price {
+        color: #236591;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+      .swiper {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .share-btn {
+        display: block;
+        width: 100%;
         background: #25d366;
         color: white;
+        text-align: center;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 20px;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: bold;
       }
-      .copy-link {
-        background: #f0ad4e;
+      .scan-btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #236591;
         color: white;
+        text-align: center;
+        padding: 18px 0;
+        font-size: 18px;
+        font-weight: bold;
+        z-index: 1000;
+        cursor: pointer;
+      }
+      .welcome-message {
+        font-size: 48px;
+        font-weight: 900;
+        text-align: center;
+        color: #2e86de; /* Nice, vibrant blue */
+        background-color: #ffffff;
+        padding: 60px 30px;
+        margin: 0 auto;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 2px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        animation: fadeInScale 1s ease-out;
+        max-width: 900px;
+        /* margin-top: 84px; */
+        height: 100%;
+      }
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
       }
     </style>
   </head>
-
   <body>
+    <header>
+      <img src="./doonb2b-color-rect-logo-solid-white-bg.png" alt="Logo" />
+    </header>
     <div id="scanner-container"></div>
-    <div id="product-info">
-      <h2 id="product-name"></h2>
-      <p><span id="sku"></span></p>
-      <div class="price-info">
-        <p>Sale Price: ₹<span id="sale-price"></span></p>
-      </div>
-      <div class="carousel" id="image-carousel"></div>
-      <div class="insta-embed" id="insta-container"></div>
-      <button class="share-whatsapp" onclick="shareOnWhatsApp()">
-        Share on WhatsApp
-      </button>
-      <button class="copy-link" onclick="copyLink()">Copy Link</button>
+    <div class="welcome-message">
+      Please click on the <strong>Scan Product</strong> button and scan any
+      Barcode
     </div>
-    <button class="scan-again" onclick="startScanner()">Scan Product</button>
+    <div class="product">
+      <div class="swiper">
+        <div class="swiper-wrapper" id="swiper-wrapper">
+          <!-- Slides will be generated dynamically -->
+        </div>
+      </div>
 
-    <script src="https://unpkg.com/@ericblade/quagga2@1.2.6/dist/quagga.min.js"></script>
-    <script src="./public-product-info.js"></script>
+      <div class="product-title" id="product-title"></div>
+      <div class="product-sku" id="product-sku"></div>
+      <div class="product-price" id="product-price"></div>
+
+      <a class="share-btn" id="share-btn" href="#" target="_blank">
+        Share on WhatsApp
+      </a>
+    </div>
+
+    <div class="scan-btn" onclick="startScanner()">Scan Product</div>
 
     <script>
+      let swiper;
+
+      function showProduct(data) {
+        document.getElementById('scanner-container').style.display = 'none';
+        document.querySelector('.welcome-message').style.display = 'none';
+
+        document.querySelector('.product').style.display = 'block';
+
+        document.getElementById('product-title').textContent = data.title;
+        document.getElementById('product-sku').textContent = 'SKU: ' + data.sku;
+        document.getElementById('product-price').textContent =
+          '₹' + data.salePrice;
+
+        const swiperWrapper = document.getElementById('swiper-wrapper');
+        swiperWrapper.innerHTML = ''; // Clear previous slides
+
+        data.images.forEach((imgUrl) => {
+          const slide = document.createElement('div');
+          slide.className = 'swiper-slide';
+          slide.innerHTML = `<img src="${imgUrl}" alt="Product Image">`;
+          swiperWrapper.appendChild(slide);
+        });
+
+        if (swiper) {
+          swiper.update();
+        } else {
+          swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false
+            }
+          });
+        }
+
+        const url = new URL(window.location);
+        const productUrl =
+          url.origin + url.pathname + '?' + url.searchParams.toString();
+
+        const shareText = `Check out this ${data.title} for just ₹${data.salePrice}! ${productUrl}`;
+        const shareLink = `https://wa.me/?text=${encodeURIComponent(
+          shareText
+        )}`;
+        document.getElementById('share-btn').href = shareLink;
+      }
+
       let quaggaStarted = false;
 
       function startScanner() {
         clearItemCodeFromUrl();
+        document.querySelector('.welcome-message').style.display = 'none';
         document.getElementById('scanner-container').style.display = 'block';
-        document.getElementById('product-info').style.display = 'none';
+        document.querySelector('.product').style.display = 'none';
 
         if (quaggaStarted) {
           Quagga.stop();
@@ -169,71 +261,17 @@
         });
       }
 
-      function showProduct(data) {
-        document.getElementById('scanner-container').style.display = 'none';
-
-        setTimeout(() => {
-          // Add a slight delay to show "Loading..."
-          const carousel = document.getElementById('image-carousel');
-          carousel.innerHTML = '';
-          data.images.forEach((imgUrl) => {
-            const img = document.createElement('img');
-            img.src = imgUrl;
-            carousel.appendChild(img);
-          });
-          carousel.scrollLeft = 0;
-
-          document.getElementById('product-name').innerText = data.title;
-          document.getElementById('sku').innerText = data.sku;
-          document.getElementById('sale-price').innerText = data.salePrice;
-
-          const instaContainer = document.getElementById('insta-container');
-          instaContainer.innerHTML = data.instalUrl
-            ? `<blockquote class="instagram-media" data-instgrm-permalink="${data.instalUrl}" data-instgrm-version="14"></blockquote>`
-            : '';
-
-          if (data.instalUrl) {
-            loadInstagramEmbed();
-          }
-
-          document.getElementById('product-info').style.display = 'block';
-        }, 400);
-      }
-
-      function loadInstagramEmbed() {
-        if (!window.instgrm) {
-          const script = document.createElement('script');
-          script.src = 'https://www.instagram.com/embed.js';
-          script.onload = () => window.instgrm.Embeds.process();
-          document.body.appendChild(script);
-        } else {
-          window.instgrm.Embeds.process();
-        }
-      }
-
-      function shareOnWhatsApp() {
-        const itemCode = document.getElementById('sku').innerText.split('_')[0];
-        const url = new URL(window.location);
-        url.searchParams.set('itemCode', itemCode);
-        const productUrl =
-          url.origin + url.pathname + '?' + url.searchParams.toString();
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
-          'Check out this product: ' + productUrl
-        )}`;
-        window.open(whatsappUrl, '_blank');
-      }
-
-      function copyLink() {
-        const itemCode = document.getElementById('sku').innerText.split('_')[0];
-        const url = new URL(window.location);
-        url.searchParams.set('itemCode', itemCode);
-        const productUrl =
-          url.origin + url.pathname + '?' + url.searchParams.toString();
-        navigator.clipboard
-          .writeText(productUrl)
-          .then(() => alert('Link copied to clipboard!'))
-          .catch((err) => console.error('Failed to copy: ', err));
-      }
+      // function shareOnWhatsApp() {
+      //   const itemCode = document.getElementById('sku').innerText.split('_')[0];
+      //   const url = new URL(window.location);
+      //   url.searchParams.set('itemCode', itemCode);
+      //   const productUrl =
+      //     url.origin + url.pathname + '?' + url.searchParams.toString();
+      //   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
+      //     'Check out this product: ' + productUrl
+      //   )}`;
+      //   window.open(whatsappUrl, '_blank');
+      // }
 
       function clearItemCodeFromUrl() {
         const url = new URL(window.location);
