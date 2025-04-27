@@ -205,9 +205,9 @@
 
         const url = new URL(window.location);
         const productUrl =
-          url.origin + url.pathname + '?' + url.searchParams.toString();
+          url.origin + url.pathname + '?' + `itemCode=${data.itemCode}`;
 
-        const shareText = `Check out this ${data.title} for just ₹${data.salePrice}! ${productUrl}`;
+        const shareText = `${data.title} for just *₹${data.salePrice}*! \n\n ${productUrl}`;
         const shareLink = `https://wa.me/?text=${encodeURIComponent(
           shareText
         )}`;
