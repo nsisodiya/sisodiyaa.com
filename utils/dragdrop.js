@@ -28,28 +28,57 @@
     container.appendChild(fileInput);
 
     // Inject CSS once
-    if (!document.getElementById('simple-drop-css')) {
-      const style = document.createElement('style');
-      style.id = 'simple-drop-css';
-      style.textContent = `
-        .simple-drop-zone {
-          border: 2px dashed #888;
-          padding: 20px;
-          text-align: center;
-          background: #f3f3f3;
-          cursor: pointer;
-          margin-bottom: 10px;
-          transition: background 0.3s, border-color 0.3s;
-          user-select: none;
-        }
-        .simple-drop-zone.hover {
-          background: #e0ffe0;
-          border-color: green;
-        }
-      `;
-      document.head.appendChild(style);
+if (!document.getElementById('simple-drop-css')) {
+  const style = document.createElement('style');
+  style.id = 'simple-drop-css';
+  style.textContent = `
+    .simple-drop-zone {
+      border: 2px dashed #aaa;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #f9f9f9, #fff);
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      font-family: 'Segoe UI', sans-serif;
+      color: #444;
+      position: relative;
+      overflow: hidden;
     }
 
+    .simple-drop-zone::before {
+      content: '📁';
+      font-size: 48px;
+      display: block;
+      margin-bottom: 10px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .simple-drop-zone.hover {
+      background: #e6fbee;
+      border-color: #30c96e;
+      box-shadow: 0 0 10px rgba(48, 201, 110, 0.3);
+    }
+
+    .simple-drop-zone p {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
     // Event helpers
     function preventDefaults(e) {
       e.preventDefault();
