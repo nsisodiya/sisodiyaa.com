@@ -9153,7 +9153,7 @@ window.productInfo = {
       "itemCode": "2337",
       "closingQuantity": 2,
       "sold": 4,
-      "catalog": "juicer",
+      "catalog": "kitchen",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/006_3a132c1e-6b34-47d1-874b-70397c28089c.jpg?v=1737623254",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_1c13b92b-512c-4b3a-b7eb-f65d69bd6c26.jpg?v=1737623254",
