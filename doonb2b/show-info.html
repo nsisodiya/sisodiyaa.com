@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -250,13 +250,18 @@
 
         Quagga.onDetected((result) => {
           const code = result.codeResult.code;
-          if (window.productInfo[code]) {
+          const sku = window.productInfo.itemCodeToSkuMap[code];
+          const productData = sku
+            ? window.productInfo.skuToProductInfo[sku]
+            : null;
+
+          if (productData) {
             Quagga.offDetected();
-            showProduct(window.productInfo[code]);
+            showProduct(productData);
             Quagga.stop();
             quaggaStarted = false;
           } else {
-            console.warn('SKU not found:', code);
+            console.warn('SKU not found for item code:', code);
           }
         });
       }
@@ -282,8 +287,13 @@
       window.onload = () => {
         const urlParams = new URLSearchParams(window.location.search);
         const itemCode = urlParams.get('itemCode');
-        if (itemCode && window.productInfo[itemCode]) {
-          showProduct(window.productInfo[itemCode]);
+        const sku = window.productInfo.itemCodeToSkuMap[itemCode];
+        const productData = sku
+          ? window.productInfo.skuToProductInfo[sku]
+          : null;
+
+        if (itemCode && productData) {
+          showProduct(productData);
         } else {
           startScanner();
         }
