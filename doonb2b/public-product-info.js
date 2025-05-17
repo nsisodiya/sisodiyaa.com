@@ -2288,7 +2288,7 @@ window.productInfo = {
       "itemCode": "0754",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "sports-and-fitness",
+      "catalog": "bottles",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/917acfEQmVL._SL1500_72126ad5-855d-4717-a1da-78cbbe744762.jpg?v=1737622951",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/0754_f376b919-2c78-4f3e-ae46-5154f2af6b95.jpg?v=1737622952",
@@ -2646,7 +2646,7 @@ window.productInfo = {
       "itemCode": "10004",
       "closingQuantity": 1,
       "sold": 2,
-      "catalog": "unknown",
+      "catalog": "kitchen",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_4dfa5f79-6921-42b1-9f86-416e5270e04a.jpg?v=1739797797",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/2cfb9b6a-b68a-4e31-90c6-1db91553e82d.jpg?v=1739797797",
@@ -10779,7 +10779,7 @@ window.productInfo = {
       "itemCode": "4273",
       "closingQuantity": 2,
       "sold": 2,
-      "catalog": "home-decor",
+      "catalog": "stationery",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/12_2356acb4-2f86-4c43-816e-39b1db92d521.jpg?v=1737625362",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/e81565ea-ad7b-4e72-ae95-6f9e201ddba5.jpg?v=1737625362",
@@ -11567,7 +11567,7 @@ window.productInfo = {
       "itemCode": "4744",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "unknown",
+      "catalog": "kitchen",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/16c4f26e-43b2-4f01-9216-d568b50e7711.jpg?v=1742879278",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3184744-400Pc-DD_4174-Av-Sv.jpg?v=1742879278",
