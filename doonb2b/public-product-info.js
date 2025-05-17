@@ -2657,6 +2657,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/8a2f9bf5-5d19-4082-ac4f-2ab7b21fc145.jpg?v=1743425158"
       ],
       "handle": "10004_insulated_water_jug_2_5_ltr",
+      "title": "Insulated Water Jug with Tap Leakproof, Travel Cooler (2.5 Ltr)",
       "salePrice": 185
     },
     "10022_3in1_boiled_egg_slicer_1pc": {
@@ -3662,6 +3663,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/0c493875-4885-4eca-90ec-ca90b27f6a5e.jpg?v=1740371841"
       ],
       "handle": "6-in-1-kitchen-cleaning-set-handy-free-stainless-steel-scrubber",
+      "title": "6 in 1 Kitchen Cleaning Set Handy Free Stainless Steel Scrubber",
       "salePrice": 100
     },
     "12160_peeler_with_container_1pc": {
@@ -3680,6 +3682,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1530a105-5a5f-42e0-a68d-6d02e0421d9d.jpg?v=1740977925"
       ],
       "handle": "stainless-steel-peeler-with-container-1-pc",
+      "title": "Stainless Steel Peeler With Container (1 Pc)",
       "salePrice": 52
     },
     "1216_cartoon_shoulder_purse_1pc": {
@@ -3795,6 +3798,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/37a03446-1a53-43ad-8c9b-ec9c1f02887a.jpg?v=1741412155"
       ],
       "handle": "plastic-baking-measuring-cup-2-5l-measurement-with-scale-kitchen-pouring-cup",
+      "title": "Plastic Baking Measuring Cup 2.5L Measurement with Scale Kitchen Pouring Cup",
       "salePrice": 245
     },
     "12242_ss_big_hand_push_rotary_whisk_no1": {
@@ -5569,6 +5573,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6b4bdfe6-2add-48a2-acaa-284fdf989640.jpg?v=1741412193"
       ],
       "handle": "14461_mini_elastic_hairbands_5pc",
+      "title": "Small Ball Elastic Hairbands (Pack of 5 / Multicolour)",
       "salePrice": 26
     },
     "1454_hot_water_bag_1400ml": {
@@ -7799,6 +7804,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/227f4153-aadc-4f99-bce3-67a894e92591.jpg?v=1740632519"
       ],
       "handle": "3d-shapes-wooden-shapes-multicoloured-wood-pattern-blocks-solid-figures",
+      "title": "3D Shapes Multicoloured Pattern Building Blocks Toy Solid Figures (6 Pcs Set)",
       "salePrice": 18
     },
     "18789_magic_cross_puzzle_1pc_atp103": {
@@ -8008,6 +8014,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3bfa441a-bfc5-4cf5-bebf-01d7bb014d54.jpg?v=1739959004"
       ],
       "handle": "maths-material-set-abacus-counting-number-arithmetic-aid-educational-kid-toy-1-set-maths-educational-toys",
+      "title": "Maths Material Set Abacus Counting Number Arithmetic Aid Educational Kid Toy",
       "salePrice": 140
     },
     "18967_pla_abacus_counting_bead_toy": {
@@ -8026,6 +8033,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/40918627-06db-4c18-aeee-bb29720673ba.jpg?v=1745926146"
       ],
       "handle": "18967_pla_abacus_counting_bead_toy",
+      "title": "Abacus 11 Rods Counting Abacuses Toy Bead Educational Tools (1 Set)",
       "salePrice": 192
     },
     "19011_sword_led_lights_toy_stick_for_kids": {
@@ -8066,6 +8074,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/d9668fff-319a-4992-8115-09af2b11f643.jpg?v=1739785032"
       ],
       "handle": "pull-along-toy-with-attractive-design-developmental-toy-for-1-year-old-girl-boy-duck",
+      "title": "Pull Along Toy with Attractive Design, Developmental Toy for 1-Year-Old Girl Boy (Duck)",
       "salePrice": 137
     },
     "19013_bus_toys_for_boy_kids_lt25": {
@@ -8084,6 +8093,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/dacee662-e398-4887-8f07-41f8437b1e6c.jpg?v=1739784723"
       ],
       "handle": "die-cast-metal-alloy-london-long-bus-double-decker-sightseeing-bus",
+      "title": "Die-cast Alloy London Long Bus Double Decker Sightseeing Bus",
       "salePrice": 218
     },
     "19014_pull_along_toy_unicorn": {
@@ -8102,6 +8112,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5bee6744-1a8b-4f50-bcb4-564310ff67f2.jpg?v=1739785279"
       ],
       "handle": "pull-along-toddler-toy-pull-along-toy-with-attractive-design",
+      "title": "Pull Along Toy Unicorn | Pull String Toys for Babies",
       "salePrice": 137
     },
     "1903_at03_doctor_kit_briefcase": {
@@ -11580,6 +11591,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5718e598-ddd0-44cf-8d82-63cc489ae5ab.jpg?v=1742879278"
       ],
       "handle": "plastic-bathroom-organizer-kitchen-utility-storage-rack",
+      "title": "Plastic Bathroom Organizer Kitchen Utility Storage Rack (32x19.5 Cm / 1 Pc)",
       "salePrice": 141
     },
     "4746_mag_sticks_building_blocks_toy": {
@@ -11598,6 +11610,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/9d617eef-2abe-4d18-a6ae-5c6663f906c4.jpg?v=1740202155"
       ],
       "handle": "magnetic-sticks-building-blocks-learning-toy-for-kids-playing-learning-toys-for-kids-32-pc",
+      "title": "Magnetic Sticks Building Blocks Learning Toy for Kids (32 Pc)",
       "salePrice": 355
     },
     "4752_1pc_mix_rainbow_fidget": {
@@ -13276,6 +13289,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/33538e55-c78f-4641-a7cd-8f64e7a2543d.jpg?v=1740371886"
       ],
       "handle": "7188_french_fries_cutter",
+      "title": "French Fries Potato Chips Strip Cutting Cutter Machine (1 Pc)",
       "salePrice": 110
     },
     "7192_plastic_puri_press_1pc": {
@@ -14280,6 +14294,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/97feec85-7e48-46cc-b215-2b306b5ee4aa.jpg?v=1740459885"
       ],
       "handle": "space-307",
+      "title": "Colourful Flowing Flower Hair Pin (4 Pcs Set / Mix Color), Hair accessories",
       "salePrice": 130
     },
     "8431_nail_polish_file_1pc": {
@@ -14595,6 +14610,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/b27cc5d8-2286-425d-9e97-78ac11219e4f.jpg?v=1741611530"
       ],
       "handle": "bathroom-organizer-kitchen-utility-storage-rack-shelf-divider-makeup-home",
+      "title": "Bathroom Organizer Kitchen Utility Storage Rack Shelf Divider Makeup Home",
       "salePrice": 103
     },
     "8915_insulated_zipper_lunch_bag_no2": {
@@ -14613,6 +14629,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/a33575c5-e279-42f9-9245-6751a62818d7.jpg?v=1740977955"
       ],
       "handle": "lunch-box-bag-for-women-men-insulated-lunch-bag-with-zipper-1-pc-1",
+      "title": "Lunch Box Bag for Women Men Insulated Lunch Bag With Zipper (1 Pc)",
       "salePrice": 69
     },
     "8925_kids_maths_abacus_tool": {
@@ -14631,6 +14648,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5ea426eb-a2f7-4c80-a1ae-458a87475b13.jpg?v=1740718070"
       ],
       "handle": "childrens-abacus-girl-piggy-bank-kids-math-abacus-tool-for-kids-math-vintage-abacus-beads-pupils",
+      "title": "Marketing Educational Abacus 13 Rods for Kids Early Maths Skills",
       "salePrice": 101
     },
     "9041_small_hand_tally_counter": {
@@ -14847,6 +14865,7 @@ window.productInfo = {
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/09936037-f233-4ed6-807e-67548395e232.jpg?v=1741412172"
       ],
       "handle": "plastic-simple-headbands-comb-headbands-hairbands-1-pc-2",
+      "title": "Plastic Simple Headbands Comb Headbands Hairbands (1 Pc)",
       "salePrice": 19
     }
   }
