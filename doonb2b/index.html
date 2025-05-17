@@ -25,6 +25,16 @@
         max-width: 100%;
         max-height: 130px;
       }
+      .product-price {
+        font-size: 20px;
+        position: absolute;
+        background: white;
+        border: 1px solid #7b7b7b;
+        padding: 1px;
+        border-radius: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
       .catalog-list,
       .product-list {
         display: grid;
@@ -58,6 +68,12 @@
         font-size: 0.8rem;
         text-transform: capitalize;
       }
+      .product-stock {
+        padding: 0.2rem;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
       .hidden {
         display: none;
       }
@@ -88,7 +104,7 @@
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
       <img
         src="https://sisodiyaa.com/doonb2b/doonb2b-color-rect-logo-solid-white-bg.png"
         alt="DoonB2B Logo"
@@ -101,18 +117,62 @@
 
     <div id="catalogList" class="catalog-list"></div>
     <div id="productListWrapper" class="hidden">
-      <a href="#" id="backLink" class="back-link">← Back to Catalogs</a>
-      <h2 id="categoryTitle"></h2>
+      <div style="display: flex">
+        <a href="#" id="backLink" class="back-link">← Back</a>
+        <h2 id="categoryTitle"></h2>
+      </div>
       <div id="productList" class="product-list"></div>
     </div>
 
-    <script src="https://sisodiyaa.com/doonb2b/public-product-info.js"></script>
+    <div id="mapWrapper">
+      <iframe
+        style="border: 0; max-width: 100%; height: 450px"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13770.514363018525!2d78.09942039999999!3d30.361503699999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d77f732796ab%3A0xe3a5557c852ebb72!2sDoonB2B!5e0!3m2!1sen!2sin!4v1747494687970!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
+      <div
+        style="
+          font-size: 1.2rem;
+          text-align: center;
+          margin-top: 1rem;
+          color: #2c3e50;
+        "
+      >
+        Contact Number: <a href="tel:+919834763808">+91 98347 63808</a>
+      </div>
+    </div>
+
+    <script src="./public-product-info.js"></script>
     <script>
       function getThumbnailImage(url) {
         return url.replace(
           /(\.jpg|\.png|\.webp|\.jpeg)(\?.*)?$/,
           '_150x150$1$2'
         );
+      }
+
+      function doesProductMatchSearch(query, product) {
+        if (!query || !product) return false;
+
+        const queryWords = query.trim().toLowerCase().split(/\s+/);
+
+        const searchableText = [product.title, product.handle, product.sku]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, ' ') // remove punctuation
+          .split(/\s+/); // tokenize searchable fields
+
+        // Create a Set for fast lookup of searchable words
+        const searchableWordSet = new Set(searchableText);
+
+        return queryWords.every((word) => searchableWordSet.has(word));
       }
 
       window.addEventListener('load', () => {
@@ -134,13 +194,16 @@
         const productList = document.getElementById('productList');
         const productListWrapper =
           document.getElementById('productListWrapper');
+        const mapWrapper = document.getElementById('mapWrapper');
         const backLink = document.getElementById('backLink');
+        const header = document.getElementById('header');
         const categoryTitle = document.getElementById('categoryTitle');
         const searchInput = document.getElementById('searchInput');
 
         function showCatalogs() {
           catalogList.classList.remove('hidden');
           productListWrapper.classList.add('hidden');
+          mapWrapper.classList.remove('hidden');
           catalogList.innerHTML = '';
 
           Object.entries(catalogData).forEach(([catalog, image]) => {
@@ -158,6 +221,8 @@
         function showProducts(catalog) {
           catalogList.classList.add('hidden');
           productListWrapper.classList.remove('hidden');
+          mapWrapper.classList.add('hidden');
+
           productList.innerHTML = '';
           categoryTitle.textContent = catalog.replace(/-/g, ' ');
 
@@ -166,9 +231,21 @@
             .forEach((product) => {
               const div = document.createElement('div');
               div.className = 'product-item';
+              const totalItems = product.items_per_bag
+                ? Math.round(product.closingQuantity * product.items_per_bag)
+                : null;
+              const salePrice = product.items_per_bag
+                ? Math.round(product.salePrice / product.items_per_bag)
+                : null;
               div.innerHTML = `
-                <img src="${getThumbnailImage(product.images[0])}" alt="${product.title}" />
-                <div class="product-title">${product.title}<br>₹${product.salePrice}</div>
+                              <div class="product-price">
+                ₹ ${salePrice !== null ? `${salePrice} per item` : product.salePrice}
+              </div>
+                              <img src="${getThumbnailImage(product.images[0])}" alt="${product.title}" />
+                <div class="product-title">${product.title}</div>
+                  <div class="product-stock">
+                    Stock - ${totalItems !== null ? `${totalItems} items` : product.closingQuantity}
+                  </div>
               `;
               productList.appendChild(div);
             });
@@ -178,12 +255,14 @@
           const lowerKeyword = keyword.toLowerCase();
           catalogList.classList.add('hidden');
           productListWrapper.classList.remove('hidden');
-          categoryTitle.textContent = `Search Results for: "${keyword}"`;
+          categoryTitle.textContent = ``;
           productList.innerHTML = '';
+          console.log('Searching for:', lowerKeyword);
 
           const results = Object.values(productInfo.skuToProductInfo).filter(
-            (p) => p.title && p.title.toLowerCase().includes(lowerKeyword)
+            (p) => doesProductMatchSearch(lowerKeyword, p)
           );
+          console.log('Search results:', results);
 
           if (results.length === 0) {
             productList.innerHTML =
@@ -194,9 +273,23 @@
           results.forEach((product) => {
             const div = document.createElement('div');
             div.className = 'product-item';
+            const totalItems = product.items_per_bag
+              ? Math.round(product.closingQuantity * product.items_per_bag)
+              : null;
+
+            const salePrice = product.items_per_bag
+              ? Math.round(product.salePrice / product.items_per_bag)
+              : null;
+
             div.innerHTML = `
+              <div class="product-price">
+                ₹ ${salePrice !== null ? `${salePrice} per item` : product.salePrice}
+              </div>
               <img src="${getThumbnailImage(product.images[0])}" alt="${product.title}" />
-              <div class="product-title">${product.title}<br>₹${product.salePrice}</div>
+              <div class="product-title">${product.title}</div>
+              <div class="product-stock">
+                Stock - ${totalItems !== null ? `${totalItems} items` : product.closingQuantity}
+              </div>
             `;
             productList.appendChild(div);
           });
@@ -212,6 +305,11 @@
         });
 
         backLink.onclick = (e) => {
+          e.preventDefault();
+          searchInput.value = '';
+          showCatalogs();
+        };
+        header.onclick = (e) => {
           e.preventDefault();
           searchInput.value = '';
           showCatalogs();
