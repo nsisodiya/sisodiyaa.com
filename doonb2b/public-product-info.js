@@ -1097,7 +1097,7 @@ window.productInfo = {
       "itemCode": "0163",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "spice-rack",
+      "catalog": "kitchen-storage",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/0163.jpg?v=1737629249",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0163.jpg?v=1737629249",
@@ -1156,7 +1156,7 @@ window.productInfo = {
       "itemCode": "0196",
       "closingQuantity": 6,
       "sold": 4,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/300-30001.jpg?v=1737629400",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0196.jpg?v=1737629400",
@@ -1231,7 +1231,7 @@ window.productInfo = {
       "itemCode": "0288",
       "closingQuantity": 1,
       "sold": 3,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_4415ea21-83d3-4d1f-9cf7-01c45e007b96.jpg?v=1737619191",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/fe7134d3-8c88-4c40-91f5-a80607616771_c118c196-979d-4a5a-8700-9b3ee1a4e5b4.jpg?v=1737619191",
@@ -1286,7 +1286,7 @@ window.productInfo = {
       "itemCode": "0318",
       "closingQuantity": 2,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_eb1c8841-aec6-40ad-994d-dc6ccaf754ff.jpg?v=1737625972",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/623b9ff3-18c7-48b0-b119-a5ffe37237bf.jpg?v=1737625972",
@@ -1326,7 +1326,7 @@ window.productInfo = {
       "itemCode": "0347",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/3_30067846-39d7-4eb9-be8b-5f9bdb4193ae.jpg?v=1737629340",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0347.jpg?v=1737629341",
@@ -1341,7 +1341,7 @@ window.productInfo = {
       "itemCode": "0355",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/946ea067-3dee-4e10-825d-545780df658d_00f0df0d-b0b2-4922-9b9b-81f0a17b6598.jpg?v=1737630849",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0355.jpg?v=1737630849",
@@ -1377,7 +1377,7 @@ window.productInfo = {
       "itemCode": "0359",
       "closingQuantity": 4,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4_41cf38be-8dba-4082-bb6b-aff5b56dd03d.jpg?v=1737620928",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1_f90f79b0-e67c-4635-ad0b-40d14d0dea32.jpg?v=1737620928",
@@ -1395,7 +1395,7 @@ window.productInfo = {
       "itemCode": "0360",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/5ffa4fcf4295efd4332ce8ea-large.jpg?v=1737629561",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0360.jpg?v=1737629561",
@@ -1415,7 +1415,7 @@ window.productInfo = {
       "itemCode": "0360a",
       "closingQuantity": 4,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/5ffa4fcf4295efd4332ce8ea-3-large_ae547507-64b7-4beb-a908-6b72958fc0f0.jpg?v=1738394540",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0360_d30b02c2-e32f-4e72-a449-39b83254199c.jpg?v=1738394540",
@@ -1435,7 +1435,7 @@ window.productInfo = {
       "itemCode": "0361",
       "closingQuantity": 10,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_a38e1676-12a4-44c4-947a-50c5862c926f.jpg?v=1737625549",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3ecf2403-12e1-4a14-8742-c51ea0da36bc.jpg?v=1737625549",
@@ -1497,7 +1497,7 @@ window.productInfo = {
       "itemCode": "0378b",
       "closingQuantity": 4,
       "sold": 1,
-      "catalog": "baby-care",
+      "catalog": "baby-products",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/8-_a.jpg?v=1737628329",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/d8944a43-70a1-4bb3-8e7e-f8b218fc417d.jpg?v=1737628329",
@@ -1518,7 +1518,7 @@ window.productInfo = {
       "itemCode": "0383",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/71Kx2HRqSKL._SL1500_b444c827-1ab7-464f-82bc-024ce5098834.jpg?v=1737629509",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0383.jpg?v=1737629509",
@@ -2271,7 +2271,7 @@ window.productInfo = {
       "itemCode": "0749",
       "closingQuantity": 6,
       "sold": 4,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/brush_189329c3-49f2-4f9a-83cd-c97d6c448d98.jpg?v=1686906347",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0749.jpg?v=1686906347",
@@ -2328,7 +2328,7 @@ window.productInfo = {
       "itemCode": "0762",
       "closingQuantity": 5,
       "sold": 1,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1588ea83-d303-4d89-ad8a-0e52d28d4f05.jpg?v=1737629567",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0762.jpg?v=1737629567",
@@ -2383,7 +2383,7 @@ window.productInfo = {
       "itemCode": "0803",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "rack",
+      "catalog": "rack-&-drawer",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/24_194f39b7-5fe4-4635-a9f9-a20a4386abb2.jpg?v=1737629657",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0803.jpg?v=1737629657",
@@ -2502,7 +2502,7 @@ window.productInfo = {
       "itemCode": "0832",
       "closingQuantity": 10,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/leafsoapholder45.jpg?v=1738296680",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/0832.jpg?v=1738296663",
@@ -2602,7 +2602,7 @@ window.productInfo = {
       "itemCode": "0977",
       "closingQuantity": 1,
       "sold": 9,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/WhatsAppImage2024-06-04at2.16.40PM_1.jpg?v=1737621891",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/kXjDPVUo1hVvtT1XPXIJDNSCYbbrt2mnhWrYZswV.jpg?v=1737621891",
@@ -2626,7 +2626,7 @@ window.productInfo = {
       "closingQuantity": 4.67,
       "sold": 0.33,
       "items_per_bag": 6,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/c31fda13-2e43-4ab8-b134-ed938fb96066.jpg?v=1737614056",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/69e4232c-c828-4b90-bddf-3124eb8d0cf0.jpg?v=1737614056",
@@ -3258,7 +3258,7 @@ window.productInfo = {
       "closingQuantity": 4.33,
       "sold": 5.67,
       "items_per_bag": 6,
-      "catalog": "drawer",
+      "catalog": "rack-&-drawer",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/61Y2bKstkXL._SL1000.jpg?v=1737630084",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1079.jpg?v=1737630084",
@@ -3298,7 +3298,7 @@ window.productInfo = {
       "itemCode": "1130",
       "closingQuantity": 16,
       "sold": 4,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/07_b971ebec-7b68-4900-a01e-342af99dc834.jpg?v=1738157154",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1130.jpg?v=1737630291",
@@ -3315,7 +3315,7 @@ window.productInfo = {
       "itemCode": "1151",
       "closingQuantity": 2,
       "sold": 0,
-      "catalog": "drawer",
+      "catalog": "rack-&-drawer",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/3_dcb3275b-51aa-452f-87ea-a81379a0cefb.jpg?v=1737632969",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1_42c3cea2-e458-44a4-ae66-6192711cf198.jpg?v=1737632969",
@@ -3336,7 +3336,7 @@ window.productInfo = {
       "itemCode": "1156",
       "closingQuantity": 4,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5_526fef64-ada0-44af-aa22-79725df746f2.jpg?v=1737969957",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/160a9c83-a773-480e-960b-d26d1d121969_36dd83d6-fcf6-414c-af4c-901f9b7bd915.jpg?v=1737616416",
@@ -3829,7 +3829,7 @@ window.productInfo = {
       "itemCode": "1224l",
       "closingQuantity": 2,
       "sold": 3,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/06_88c7456a-0d7f-4f26-b307-cc1a0999486e.jpg?v=1738409362",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/10_006da5e9-689b-42d8-aaf4-e45601a79b0d.jpg?v=1738409366",
@@ -4179,7 +4179,7 @@ window.productInfo = {
       "itemCode": "12605",
       "closingQuantity": 2,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_454a6389-3250-40fc-970c-aa9407afb69a.jpg?v=1737623804",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/e370c0d4-6e6e-44a2-8320-e16c4e1bb29d.jpg?v=1737623804",
@@ -4197,7 +4197,7 @@ window.productInfo = {
       "itemCode": "12626",
       "closingQuantity": 7,
       "sold": 3,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_b6208232-d140-468c-8eb3-ebf0a7b9e250.jpg?v=1737619496",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/58eb3a14-2b55-468e-944f-8e10210b232a_605d7c03-bce1-435c-a711-c06f5d766294.jpg?v=1737619496",
@@ -4217,7 +4217,7 @@ window.productInfo = {
       "itemCode": "1265",
       "closingQuantity": 12,
       "sold": 4,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/f4020d4b-8f10-4532-ae8b-1919fcee6088.jpg?v=1739185277",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1265.jpg?v=1739185251",
@@ -4235,7 +4235,7 @@ window.productInfo = {
       "itemCode": "12676",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/08_a26bd766-2dee-495e-ada4-7ca263e10bd7.jpg?v=1737623982",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/634c0bca-46c5-4f4b-aded-56b3b688f05f.jpg?v=1737623982",
@@ -4274,7 +4274,7 @@ window.productInfo = {
       "itemCode": "12684",
       "closingQuantity": 2,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4_5799716f-5823-4286-8565-b1210c6a0e2d.jpg?v=1737620766",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1_a44b251e-7846-44af-9a42-c74e9c25fa79.jpg?v=1737620767",
@@ -4335,7 +4335,7 @@ window.productInfo = {
       "itemCode": "12737",
       "closingQuantity": 20,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3.jpg?v=1737623536",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/90a7e83c-fae5-4eb4-990a-3ca526abe4d9.jpg?v=1737623536",
@@ -4354,7 +4354,7 @@ window.productInfo = {
       "itemCode": "12791",
       "closingQuantity": 1,
       "sold": 9,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_725367d7-3b1d-40b5-a4c2-c331ffc12012.jpg?v=1737622842",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/775176ab-bbb5-47a5-a3db-b249a6ddd6f7.jpg?v=1737622842",
@@ -4415,7 +4415,7 @@ window.productInfo = {
       "itemCode": "12839",
       "closingQuantity": 3,
       "sold": 1,
-      "catalog": "health-&-personal-care",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_356e6a75-71af-4c93-bed9-63c7a20ab1c4.jpg?v=1737622591",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/sku_a2b4a8dd-e810-4120-aafb-2108676d529e.jpg?v=1737622591",
@@ -4516,7 +4516,7 @@ window.productInfo = {
       "itemCode": "1302",
       "closingQuantity": 8,
       "sold": 2,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1302.jpg?v=1737629845",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1302_b3a07994-242f-43d4-b030-f020c26c33b3.jpg?v=1737629846",
@@ -4581,7 +4581,7 @@ window.productInfo = {
       "itemCode": "13055",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_3d33fb11-8d55-4a70-8122-557003546df9.jpg?v=1737620560",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/0a30de0b-aabe-4beb-b633-f0bfde1070f3.jpg?v=1737620561",
@@ -4619,7 +4619,7 @@ window.productInfo = {
       "itemCode": "13072",
       "closingQuantity": 3,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_6e303921-01f7-46f1-998d-cfcc969eaae0.jpg?v=1737622494",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/de77e962-24e5-4426-8c73-a5bde10da248.jpg?v=1737622494",
@@ -4757,7 +4757,7 @@ window.productInfo = {
       "itemCode": "13345",
       "closingQuantity": 4,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_cc0f5d16-31fc-458f-9c5e-bdfbcfc344dc.jpg?v=1737619997",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/9292fff9-bf04-49b1-8478-ce43930a342f.jpg?v=1737619997",
@@ -4776,7 +4776,7 @@ window.productInfo = {
       "itemCode": "13372",
       "closingQuantity": 9,
       "sold": 1,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7_430e80cc-4830-4fc5-b18e-4d37479ad477.jpg?v=1737619592",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/sku_7b5d4723-01e2-4d82-851f-72cc0f669042.jpg?v=1737619592",
@@ -4819,7 +4819,7 @@ window.productInfo = {
       "itemCode": "13531",
       "closingQuantity": 2,
       "sold": 8,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_e0b1ea1c-bcd4-41d3-925c-173474878a50.jpg?v=1737618811",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/13b97b53-9b2b-4d44-88d1-e471f7d01094.jpg?v=1737618811",
@@ -4838,7 +4838,7 @@ window.productInfo = {
       "itemCode": "13533",
       "closingQuantity": 4,
       "sold": 6,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/45.jpg?v=1737618788",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/96ee6bb7-2e8c-4bee-9ce2-0948a03f11a1.jpg?v=1737618788",
@@ -4858,7 +4858,7 @@ window.productInfo = {
       "itemCode": "13544",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_2168886f-d8d0-41fa-bf36-1d646a7af99f.jpg?v=1737615292",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_870fbc0b-bee5-4321-b67a-8886c07eb76e.jpg?v=1737615292",
@@ -4878,7 +4878,7 @@ window.productInfo = {
       "itemCode": "13551",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_393a15aa-dc47-469f-8e4f-db32b3bafdb9.jpg?v=1737615895",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/84c6efa9-5dc5-4286-b1d3-ef67fc336c70.jpg?v=1737615895",
@@ -4916,7 +4916,7 @@ window.productInfo = {
       "itemCode": "13561",
       "closingQuantity": 14,
       "sold": 6,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_cba27d45-d12f-4911-8053-34cc783fbf5c.jpg?v=1737616708",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/sku_72728b92-8dc2-43d7-9700-ec18e97f7d96.jpg?v=1737616708",
@@ -4935,7 +4935,7 @@ window.productInfo = {
       "itemCode": "1361",
       "closingQuantity": 3,
       "sold": 1,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/06_972f15b9-8b31-40e5-859c-ae4d3e45463e.jpg?v=1737634261",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/04_e513491e-5d88-45c2-971b-018cd0e83ebc.jpg?v=1737634261",
@@ -4953,7 +4953,7 @@ window.productInfo = {
       "itemCode": "13648",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_7d72934b-b4b2-42db-9dca-03610dd39e6f.jpg?v=1737615130",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/95_00d175b1-2aed-40cd-ac05-4f0e9b6694f8.jpg?v=1737615131",
@@ -4974,7 +4974,7 @@ window.productInfo = {
       "itemCode": "13657",
       "closingQuantity": 1,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_c42296fe-b08b-408f-9e26-2f0b5bcb908a.jpg?v=1737615558",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/75de22e3-86da-4b62-aefc-eb591de7e7b5.jpg?v=1737615558",
@@ -4993,7 +4993,7 @@ window.productInfo = {
       "itemCode": "13710",
       "closingQuantity": 10,
       "sold": 0,
-      "catalog": "baby-care",
+      "catalog": "baby-products",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_8430ca2b-0d67-4953-933c-e2922867f676.jpg?v=1737617781",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/d64c6aae-456f-4ace-829c-419971255f01.jpg?v=1737617781",
@@ -5013,7 +5013,7 @@ window.productInfo = {
       "itemCode": "13712",
       "closingQuantity": 7,
       "sold": 3,
-      "catalog": "baby-care",
+      "catalog": "baby-products",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_58835bd2-653d-449f-9169-5577eaa0936e.jpg?v=1737617785",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6b3529f6-ccda-47c1-a30e-5db0ee9abfaa.jpg?v=1737617785",
@@ -5059,7 +5059,7 @@ window.productInfo = {
       "itemCode": "1379",
       "closingQuantity": 2,
       "sold": 13,
-      "catalog": "smart-phone-stand",
+      "catalog": "electronics-accessories",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/6039900e07ff73671e495423-6-large_a44a5a52-1f5f-428b-b7cc-32cc0df20889.jpg?v=1737630672",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/6039900e07ff73671e495423-2-large_24e68c4c-db3d-42d4-82c9-c7f591c711bb.jpg?v=1737630673",
@@ -5079,7 +5079,7 @@ window.productInfo = {
       "itemCode": "13823",
       "closingQuantity": 4,
       "sold": 4,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/07_ec450ae8-9686-4ffc-bf43-23019ea8159a.jpg?v=1738214518",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/696b1746-ee10-44b4-8828-00c8d647362b.jpg?v=1738214518",
@@ -5099,7 +5099,7 @@ window.productInfo = {
       "itemCode": "13825",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/07_2f462626-1fc0-42df-bbbe-9f08e5767909.jpg?v=1738214516",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/75bba973-0c2f-4ae3-8535-9058875b9158.jpg?v=1738214516",
@@ -5119,7 +5119,7 @@ window.productInfo = {
       "itemCode": "13826",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_3493f65b-60b5-4843-aaf9-95f9b562c32e.jpg?v=1738297174",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/sku_09a9f481-f482-41c5-bd8c-bcf519d48bff.jpg?v=1738297175",
@@ -5138,7 +5138,7 @@ window.productInfo = {
       "itemCode": "13829",
       "closingQuantity": 4,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_e7f52169-c8f2-4c86-a566-7df555f276f7.jpg?v=1738214520",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/56bd376e-be3d-4614-b296-2cff3374c0c0.jpg?v=1738214520",
@@ -5159,7 +5159,7 @@ window.productInfo = {
       "itemCode": "13841",
       "closingQuantity": 9,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_525923b7-0e02-4d9a-93f5-e74736ecfaac.jpg?v=1737616735",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/735ffda1-c54e-48e4-a8f9-e53c1e6b1d7d.jpg?v=1737616735",
@@ -5215,7 +5215,7 @@ window.productInfo = {
       "itemCode": "13890",
       "closingQuantity": 1,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_669946a1-39bc-44d3-9f34-eac43ebb0b52.jpg?v=1739248942",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/971660pc-13890-103gm.jpg?v=1739248942",
@@ -5235,7 +5235,7 @@ window.productInfo = {
       "itemCode": "13909",
       "closingQuantity": 1,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_3ad8a390-ff8b-408f-b20c-a0f198306554.jpg?v=1737615986",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/171.jpg?v=1737615986",
@@ -5254,7 +5254,7 @@ window.productInfo = {
       "itemCode": "13911",
       "closingQuantity": 1,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_b84f3607-81e5-4e90-9359-c1adae595f9c.jpg?v=1738588956",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/173.jpg?v=1738588956",
@@ -5273,7 +5273,7 @@ window.productInfo = {
       "itemCode": "13932",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_614a4a79-5463-4925-9e95-1c9461a71070.jpg?v=1738846205",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/dbd5bbad-cee4-4dd7-84c7-cf54698bf4b6.jpg?v=1738846205",
@@ -5338,7 +5338,7 @@ window.productInfo = {
       "itemCode": "13949",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_7cb269e3-eab8-49d8-b8c1-8d72989e93c7.jpg?v=1737615143",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/96_bc87f33b-ab7a-4836-84c0-5e60c17fbcc7.jpg?v=1737615143",
@@ -5395,7 +5395,7 @@ window.productInfo = {
       "itemCode": "14022",
       "closingQuantity": 3,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/32_d01ba65a-b41d-4e13-ac76-8d5cdde68462.jpg?v=1737614801",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/57_0f512965-98aa-41c3-bde2-16d82e5526ce.jpg?v=1737614801",
@@ -5453,7 +5453,7 @@ window.productInfo = {
       "itemCode": "14038",
       "closingQuantity": 1,
       "sold": 9,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_8829d0a8-9644-4b6a-8fa1-0eb07a567b6c.jpg?v=1737614691",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1a614d14-9f6b-4d4a-8d04-afa92e83e529.jpg?v=1737614691",
@@ -5562,7 +5562,7 @@ window.productInfo = {
       "itemCode": "14461",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1_4aad90de-9dd9-480c-b78a-61c8265a2409.jpg?v=1741412192",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5914461_2.jpg?v=1741412192",
@@ -5664,7 +5664,7 @@ window.productInfo = {
       "itemCode": "1491",
       "closingQuantity": 6,
       "sold": 0,
-      "catalog": "health-&-personal-care",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/02_73d3951e-1d7d-4529-aa01-32ebac817f33.jpg?v=1737631299",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1491_0f4e16c1-38cb-44cf-8bc9-140a13661d13.jpg?v=1737631299",
@@ -6128,7 +6128,7 @@ window.productInfo = {
       "itemCode": "1671",
       "closingQuantity": 3,
       "sold": 3,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/2_75f144b3-a2a8-414d-b7f2-a4dc8934fc2f.jpg?v=1737628928",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/01_0ab998d4-a722-4d24-815e-4ba567bc5293.jpg?v=1737628928",
@@ -6267,7 +6267,7 @@ window.productInfo = {
       "itemCode": "17671",
       "closingQuantity": 11,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_fa989290-2dfa-459b-981b-4e990c7e371c.jpg?v=1737623772",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/f9f3aef5-1b62-4b20-a8e0-388070c19781.jpg?v=1737623772",
@@ -6695,7 +6695,7 @@ window.productInfo = {
       "itemCode": "17895",
       "closingQuantity": 7,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_20664594-f020-4ea8-be73-c279d5302ae1.jpg?v=1737622753",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/sku_c1025851-39eb-4f35-8780-6042bda19f71.jpg?v=1737622753",
@@ -6714,7 +6714,7 @@ window.productInfo = {
       "itemCode": "17899",
       "closingQuantity": 2,
       "sold": 3,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_fde4ddf8-26cf-4689-9ecd-a0ac7d6647c6.jpg?v=1737622538",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1df4981b-0b9c-4a6d-bb72-e43093f6c819.jpg?v=1737622538",
@@ -7008,7 +7008,7 @@ window.productInfo = {
       "itemCode": "18128",
       "closingQuantity": 9,
       "sold": 1,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_3c113b54-8b5a-4e8d-b346-8c3189f12fe4.jpg?v=1737620327",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3851d229-8ed4-42da-b008-061fb9f31f7e.jpg?v=1737620327",
@@ -7025,7 +7025,7 @@ window.productInfo = {
       "itemCode": "18151",
       "closingQuantity": 20,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_c4020961-00b8-48d9-953f-0adeb847c6c6.jpg?v=1737618389",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/c3de8b37-a298-4966-942c-963d106b32f6.jpg?v=1737618390",
@@ -7201,7 +7201,7 @@ window.productInfo = {
       "itemCode": "18344",
       "closingQuantity": 9,
       "sold": 1,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_afc371dc-a264-4ca0-97d7-9403c13bfe53.jpg?v=1737616805",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/07130e18-2e19-4304-84ec-474a722c3ee3.jpg?v=1737616805",
@@ -7495,7 +7495,7 @@ window.productInfo = {
       "itemCode": "18575",
       "closingQuantity": 1,
       "sold": 4,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_6a792160-4c8d-4df9-a0cb-4071b6b34705.jpg?v=1738987950",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_7701d170-e6ef-4e6d-841b-2432b46175eb.jpg?v=1738987950",
@@ -7517,7 +7517,7 @@ window.productInfo = {
       "itemCode": "18576",
       "closingQuantity": 8,
       "sold": 12,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/10_74bb9463-8d6c-49bb-8850-5089f5c4df91.jpg?v=1737632891",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/643b8573-a253-4ee6-a7cd-2b715fac9549.jpg?v=1737632891",
@@ -9199,7 +9199,7 @@ window.productInfo = {
       "itemCode": "2406",
       "closingQuantity": 9,
       "sold": 1,
-      "catalog": "rack",
+      "catalog": "rack-&-drawer",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/06_bc12c959-7cc1-47be-8108-b8aa5de77959.jpg?v=1737633031",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/cff5a3c7-13ea-4aad-88f6-d46cea77a29a.jpg?v=1737633031",
@@ -9218,7 +9218,7 @@ window.productInfo = {
       "itemCode": "2444",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "spice-rack",
+      "catalog": "kitchen-storage",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/Untitled-3_8b4d2e54-679c-4af7-a761-dd3e1ce94ac8.jpg?v=1737630760",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/SKUCODE_f61402f3-aa04-4855-a460-5ffbc698713f.jpg?v=1737630760",
@@ -9374,7 +9374,7 @@ window.productInfo = {
       "itemCode": "2514",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/251407.jpg?v=1737630969",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/251401.jpg?v=1737630969",
@@ -9555,7 +9555,7 @@ window.productInfo = {
       "itemCode": "2629",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/5image_c8efd5cb-6131-4d92-be38-f3197844b6a2.jpg?v=1737631498",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1image_53f894b5-a258-4501-81d4-8cbbc88215bc.jpg?v=1737631498",
@@ -10063,7 +10063,7 @@ window.productInfo = {
       "itemCode": "2938",
       "closingQuantity": 4,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/7_9a394d12-decb-4e7f-98f1-5848eb97b894.jpg?v=1737633059",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4c083c43-9d5e-4785-abb8-6e79427ecb3c.jpg?v=1737633060",
@@ -10084,7 +10084,7 @@ window.productInfo = {
       "itemCode": "2939",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/8_075b8cd2-c81b-46e0-88c6-c67aa4bf6f7d.jpg?v=1737634585",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/311f78bd-86b3-4199-802a-b0b05bb7f877.jpg?v=1737634585",
@@ -10169,7 +10169,7 @@ window.productInfo = {
       "itemCode": "2999",
       "closingQuantity": 6,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/7image_424b12cd-3500-4869-be82-291c0a92415a.jpg?v=1737631513",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/dc0cd56a-5a40-4ccf-b791-9920afb221ab.jpg?v=1737631513",
@@ -10189,7 +10189,7 @@ window.productInfo = {
       "itemCode": "3167",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_09692b5b-b0ec-4f21-9367-2ec60192186c.jpg?v=1737620040",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/sku_82292490-b203-471f-974c-2f55acd753f3.jpg?v=1737620040",
@@ -10208,7 +10208,7 @@ window.productInfo = {
       "itemCode": "3277",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_641a124a-c09f-4215-9aa4-31a48d44f5a4.jpg?v=1737619950",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/dbb16509-0b94-40e5-904c-c1a7cd87b504.jpg?v=1737619950",
@@ -10328,7 +10328,7 @@ window.productInfo = {
       "itemCode": "3639",
       "closingQuantity": 5,
       "sold": 1,
-      "catalog": "drawer",
+      "catalog": "rack-&-drawer",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_101675a6-f215-4fde-8159-692dd5ff790a.jpg?v=1737625603",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/8018cbbd-baa9-44a2-86d7-936160c6b89a.jpg?v=1737625603",
@@ -10367,7 +10367,7 @@ window.productInfo = {
       "itemCode": "3700",
       "closingQuantity": 6,
       "sold": 4,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/3700_1841b66a-564a-41c9-b53c-da758b21b7a5.jpg?v=1737630310",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/3700SKUCODE.jpg?v=1737630311",
@@ -10448,7 +10448,7 @@ window.productInfo = {
       "itemCode": "4032",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/05_90b630c5-cf2e-4e22-ba8f-61f291e60301.jpg?v=1737634669",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/08_a531941e-0e03-4d32-8dab-9f8b983b2cde.jpg?v=1737634670",
@@ -10489,7 +10489,7 @@ window.productInfo = {
       "itemCode": "4044",
       "closingQuantity": 9,
       "sold": 11,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/05_d213ec90-4011-414c-9136-96db174725e0.jpg?v=1737634081",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/ed857d07-92eb-4b0a-9f06-9e20d07f9972.jpg?v=1737634082",
@@ -10531,7 +10531,7 @@ window.productInfo = {
       "itemCode": "4083",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/07_396eb876-4d6b-491f-880a-acb853627f96.jpg?v=1737626034",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/708f1717-d2d8-466b-a432-8160b74661bc_cf609ad4-4ab6-4e21-93df-f4a8546c99cd.jpg?v=1737626034",
@@ -10571,7 +10571,7 @@ window.productInfo = {
       "itemCode": "4147",
       "closingQuantity": 15,
       "sold": 5,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/17_1ef217ea-1ab3-489b-af48-56d37d6bcbaf.jpg?v=1737626705",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/e562c150-a4af-4b32-b4b7-ec39af77922d_265d5ea6-51d2-4905-8003-db5d7d5d1f5c.jpg?v=1737626705",
@@ -11341,7 +11341,7 @@ window.productInfo = {
       "itemCode": "4618",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4_5b85c1a3-9aed-462d-985a-adbaf97ddcf7.jpg?v=1737627211",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4618_69f930b7-cbfc-4f49-be7d-aec14f6c6842.jpg?v=1737627211",
@@ -11499,7 +11499,7 @@ window.productInfo = {
       "itemCode": "4700",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/04_810d7daa-7b87-4ddc-bead-30805cc8618d.jpg?v=1737628842",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/a6068a69-d2e9-45b2-a083-8cebee274d1e.jpg?v=1737628842",
@@ -11519,7 +11519,7 @@ window.productInfo = {
       "closingQuantity": 0.02,
       "sold": 0.98,
       "items_per_bag": 50,
-      "catalog": "smart-phone-stand",
+      "catalog": "electronics-accessories",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/07_25bcbee9-8d15-47db-b921-847990670cf7.jpg?v=1737631148",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/4705_33937696-1825-4800-adb8-2c0bf94cfc93_1.jpg?v=1737631148",
@@ -11638,7 +11638,7 @@ window.productInfo = {
       "closingQuantity": 0.52,
       "sold": 0.48,
       "items_per_bag": 50,
-      "catalog": "electronics",
+      "catalog": "electronics-accessories",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/4image_7584dc36-6bae-408e-8627-ae938a1c8ed0.jpg?v=1737631690",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1image_d608ce74-4df2-49d7-876f-072269e89574.jpg?v=1737631690",
@@ -11725,7 +11725,7 @@ window.productInfo = {
       "itemCode": "4832",
       "closingQuantity": 1,
       "sold": 5,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/9_6893996d-5a03-4235-ba13-1d1b9f7aa59b.jpg?v=1737627875",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1_697cf974-b211-44c4-8944-ebde0c63762f.jpg?v=1737627876",
@@ -12511,7 +12511,7 @@ window.productInfo = {
       "itemCode": "5811",
       "closingQuantity": 1,
       "sold": 3,
-      "catalog": "spice-rack",
+      "catalog": "kitchen-storage",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/04_1b5900aa-6abe-4db6-80ef-ad54323cbcee.jpg?v=1737627016",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/9c4afbe5-37da-4e7b-b238-0a0321db3237.jpg?v=1737627017",
@@ -12644,7 +12644,7 @@ window.productInfo = {
       "closingQuantity": 10,
       "sold": 0,
       "items_per_bag": 6,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/2image_9b1be758-ac2b-4775-9a19-06b4d9f88b5c.jpg?v=1737631501",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1image_4a8bfa25-936f-4331-856c-5f81f1b0be8d.jpg?v=1737631501",
@@ -12664,7 +12664,7 @@ window.productInfo = {
       "closingQuantity": 9.67,
       "sold": 0.33,
       "items_per_bag": 6,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/2image_ffbe2993-627c-48fa-a701-40e6132dee52.jpg?v=1737631511",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1image_f3dd061e-6b20-4fe1-ac9a-042e59a02f33.jpg?v=1737631511",
@@ -12684,7 +12684,7 @@ window.productInfo = {
       "closingQuantity": 7,
       "sold": 3,
       "items_per_bag": 6,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/4image_ef8d4330-09ab-4cfd-a777-d50430337f5c.jpg?v=1737631515",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/1image_789f14d2-14f4-4479-8eb4-e9aa9e6587b6.jpg?v=1737631515",
@@ -12817,7 +12817,7 @@ window.productInfo = {
       "itemCode": "6263",
       "closingQuantity": 1,
       "sold": 4,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_c1913910-0739-48f7-a986-41a67239e2d3.jpg?v=1737614368",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/d2ddafb4-0964-4444-b07c-4c927fe8ff5f.jpg?v=1737614368",
@@ -12856,7 +12856,7 @@ window.productInfo = {
       "itemCode": "6412",
       "closingQuantity": 1,
       "sold": 3,
-      "catalog": "health-&-personal-care",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/07_85a86600-b2ec-4a59-854b-206d1a762b7c.jpg?v=1737634780",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/01_34cbbd9f-f0ed-477d-b418-9f43e38ed2a1.jpg?v=1737634780",
@@ -12895,7 +12895,7 @@ window.productInfo = {
       "itemCode": "6457",
       "closingQuantity": 5,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/656565_384cb57b-5d6a-467b-8311-5f2ed2b6fed5.jpg?v=1737614396",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/70c85e4d-1c5c-414a-ba13-5eeaa9bdf0c5.jpg?v=1737614397",
@@ -12916,7 +12916,7 @@ window.productInfo = {
       "itemCode": "6472",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/03_8ab479f9-5920-4df5-bdf1-5b9bf1e6d2bb.jpg?v=1737633878",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/01_757afedc-e02a-4471-b350-32596cef0f08.jpg?v=1737633878",
@@ -13040,7 +13040,7 @@ window.productInfo = {
       "itemCode": "6596",
       "closingQuantity": 2,
       "sold": 3,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_f8b60870-8126-4b67-a24c-7bede93174ca.jpg?v=1737626286",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/08_d49bbdb5-a4e5-48dc-8828-89bd29b43940.jpg?v=1737626286",
@@ -13062,7 +13062,7 @@ window.productInfo = {
       "itemCode": "6599",
       "closingQuantity": 10,
       "sold": 5,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_84d422db-0b3e-4f61-bb71-0e33a8b7f773.jpg?v=1737628075",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/HOQFt7jqZAJ6jHis3bEamgFXcQuXYsIN8sd0JGGb.jpg?v=1737628075",
@@ -13081,7 +13081,7 @@ window.productInfo = {
       "itemCode": "6843",
       "closingQuantity": 1,
       "sold": 3,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_1f73c434-e4cf-484b-8166-d5f095bae6dd.jpg?v=1737626555",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/ca2141ac-18db-4734-b442-37d85680ea5c_93cb207f-d0b8-4b6d-9d0b-17d8da1c65ed.jpg?v=1737626555",
@@ -13317,7 +13317,7 @@ window.productInfo = {
       "itemCode": "7274",
       "closingQuantity": 6,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/WhatsAppImage2020-12-16at1.47.05PM_076dcefc-26da-44e1-b106-74807964f30c.jpg?v=1737623806",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/656647ea-83b5-4fc6-ad3e-eb076276a572_f66bbea6-6889-4511-b9ad-d181a514720f.jpg?v=1737623806",
@@ -13335,7 +13335,7 @@ window.productInfo = {
       "itemCode": "7306",
       "closingQuantity": 2,
       "sold": 1,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/011_51f3d5a4-7f36-4380-9708-c25c3ad2be9b.jpg?v=1739279108",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/52b479f0-b36f-497a-95f5-618113ecfd27.jpg?v=1739279108",
@@ -13523,7 +13523,7 @@ window.productInfo = {
       "itemCode": "7806",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_61d0bd67-ada7-4008-a3fb-3753177f539a.jpg?v=1737626552",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7806.jpg?v=1737626553",
@@ -14243,7 +14243,7 @@ window.productInfo = {
       "closingQuantity": 2.5,
       "sold": 0.5,
       "items_per_bag": 12,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_b94fd186-a15c-402e-b203-2ec562ccb986.jpg?v=1738749331",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/108_3d8016e4-ae82-473f-bd24-f6ec89286b80.jpg?v=1738749331",
@@ -14264,7 +14264,7 @@ window.productInfo = {
       "itemCode": "8319",
       "closingQuantity": 1,
       "sold": 9,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/005_0d40de7e-f5be-4692-ba28-c1442210086f.jpg?v=1738043215",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/419.jpg?v=1738043215",
@@ -14283,7 +14283,7 @@ window.productInfo = {
       "itemCode": "8366",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_c29bb45e-a0bd-47cc-916e-72dec2700067.jpg?v=1740459884",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/298_7d9c7d40-e031-40ea-a642-c86768a8002f.jpg?v=1740459884",
@@ -14302,7 +14302,7 @@ window.productInfo = {
       "itemCode": "8431",
       "closingQuantity": 2,
       "sold": 8,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/446a928f-fbe2-4d82-819b-732b4422d1ba.jpg?v=1738214558",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/56e2f5ae-d7f9-4316-bda8-8421486d82e0.jpg?v=1738214558",
@@ -14322,7 +14322,7 @@ window.productInfo = {
       "itemCode": "8445",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_0766b40e-5615-4ad9-921c-3f4955fc1683.jpg?v=1738297198",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/fd569d94-5793-480a-93e4-806de19992c4.jpg?v=1738297199",
@@ -14341,7 +14341,7 @@ window.productInfo = {
       "itemCode": "8464",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "baby-care",
+      "catalog": "baby-products",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_391b3a88-d6a9-4564-9b8e-9d5dc6318739.jpg?v=1738731272",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/c5fbc4f9-ced9-434a-bc41-540c9512436c.jpg?v=1738731272",
@@ -14360,7 +14360,7 @@ window.productInfo = {
       "itemCode": "8482",
       "closingQuantity": 3,
       "sold": 0,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6_71e39577-42b1-438f-8850-e56d2b3b20b1.jpg?v=1739273173",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/b4f636af-3ecd-4328-b116-b586ded9bc27.jpg?v=1739273173",
@@ -14519,7 +14519,7 @@ window.productInfo = {
       "itemCode": "8729",
       "closingQuantity": 18,
       "sold": 2,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3e91dec3-86eb-4c69-a560-86629592568f.jpg?v=1737625575",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/soap-dish-02.jpg?v=1737625575",
@@ -14538,7 +14538,7 @@ window.productInfo = {
       "itemCode": "8733",
       "closingQuantity": 4,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3_2fbd1b16-3c52-40d0-897c-98d6a0131739.jpg?v=1737620951",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1_c2f51872-ddcd-4f6a-b829-3b250c1eb39a.jpg?v=1737620951",
@@ -14556,7 +14556,7 @@ window.productInfo = {
       "itemCode": "8782",
       "closingQuantity": 1,
       "sold": 4,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_19266af2-11a6-4e4f-8f81-d30d48ce2eb1.jpg?v=1737625800",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/fb85ac56-926b-4a3d-b37c-730948136e05.jpg?v=1737625800",
@@ -14599,7 +14599,7 @@ window.productInfo = {
       "itemCode": "8912",
       "closingQuantity": 9,
       "sold": 5,
-      "catalog": "rack",
+      "catalog": "rack-&-drawer",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_06d3dd3e-c430-453b-b73c-4cbb4a203c6d.jpg?v=1741611530",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/660aa1c4-5350-4021-bf71-abb333f1df50.jpg?v=1741611530",
@@ -14715,7 +14715,7 @@ window.productInfo = {
       "itemCode": "9310",
       "closingQuantity": 15,
       "sold": 0,
-      "catalog": "bathroom-accessories",
+      "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_2e90f573-61f3-4499-ba6c-b737aa8da201.jpg?v=1737623443",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/f211e533-898b-4af6-8f38-82a097522fc8_4394af9d-4047-4d05-856e-5f473778c02b.jpg?v=1737623443",
@@ -14854,7 +14854,7 @@ window.productInfo = {
       "itemCode": "9838",
       "closingQuantity": 3,
       "sold": 2,
-      "catalog": "health-&-beauty",
+      "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_5c58c33e-9cc2-4c2c-89e2-7fd3446242d6.jpg?v=1741412171",
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/ce9f12e1-09bf-44df-b4b8-83426e9e2d32.jpg?v=1741412171",
