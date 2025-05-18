@@ -266,7 +266,7 @@
       <div class="product-title">${product.sku}</div>
       <div class="product-title">${product.title}</div>
       <div class="product-stock">
-        Stock - ${product.items_per_bag ? Math.round(product.closingQuantity * product.items_per_bag) + ' items' : product.closingQuantity}
+        Stock: ${product.items_per_bag ? Math.round(product.closingQuantity * product.items_per_bag) + ' items' : product.closingQuantity}
       </div>
     </a>
   `;
