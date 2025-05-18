@@ -163,9 +163,10 @@
 
         document.getElementById('product-title').textContent = data.title;
         document.getElementById('product-sku').textContent = 'SKU: ' + data.sku;
-        document.getElementById('product-stock').textContent =
-          'Stock: ' + data.closingQuantity;
         const product = data;
+
+        document.getElementById('product-stock').textContent =
+          `Stock - ${product.items_per_bag ? Math.round(product.closingQuantity * product.items_per_bag) + ' items' : product.closingQuantity}`;
 
         const salePrice = product.items_per_bag
           ? Math.round(product.salePrice / product.items_per_bag)

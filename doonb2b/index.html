@@ -251,10 +251,6 @@
           const div = document.createElement('div');
           div.className = 'product-item';
 
-          const totalItems = product.items_per_bag
-            ? Math.round(product.closingQuantity * product.items_per_bag)
-            : null;
-
           const salePrice = product.items_per_bag
             ? Math.round(product.salePrice / product.items_per_bag)
             : null;
@@ -270,7 +266,7 @@
       <div class="product-title">${product.sku}</div>
       <div class="product-title">${product.title}</div>
       <div class="product-stock">
-        Stock - ${totalItems !== null ? `${totalItems} items` : product.closingQuantity}
+        Stock - ${product.items_per_bag ? Math.round(product.closingQuantity * product.items_per_bag) + ' items' : product.closingQuantity}
       </div>
     </a>
   `;
