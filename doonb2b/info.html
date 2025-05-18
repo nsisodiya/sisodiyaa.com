@@ -52,11 +52,26 @@
         color: #666;
         margin: 5px 0;
       }
-      .product-price {
+      .product-stock {
+        color: #666;
+        margin: 5px 0;
+      }
+      /* .product-price {
         color: #236591;
         font-size: 22px;
         font-weight: bold;
         margin: 10px 0;
+      } */
+      .product-price {
+        z-index: 100;
+        font-size: 32px;
+        position: absolute;
+        background: white;
+        border: 1px solid #7b7b7b;
+        padding: 1px;
+        border-radius: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
       }
       .swiper {
         width: 100%;
@@ -123,6 +138,7 @@
       <strong>Scan Product</strong> button.
     </div>
     <div class="product">
+      <div class="product-price" id="product-price"></div>
       <div class="swiper">
         <div class="swiper-wrapper" id="swiper-wrapper">
           <!-- Slides will be generated dynamically -->
@@ -131,7 +147,7 @@
 
       <div class="product-title" id="product-title"></div>
       <div class="product-sku" id="product-sku"></div>
-      <div class="product-price" id="product-price"></div>
+      <div class="product-stock" id="product-stock"></div>
 
       <a class="share-btn" id="share-btn" href="#" target="_blank">
         Share on WhatsApp
@@ -147,8 +163,16 @@
 
         document.getElementById('product-title').textContent = data.title;
         document.getElementById('product-sku').textContent = 'SKU: ' + data.sku;
+        document.getElementById('product-stock').textContent =
+          'Stock: ' + data.closingQuantity;
+        const product = data;
+
+        const salePrice = product.items_per_bag
+          ? Math.round(product.salePrice / product.items_per_bag)
+          : null;
+
         document.getElementById('product-price').textContent =
-          '₹' + data.salePrice;
+          `₹ ${salePrice !== null ? `${salePrice} per item` : product.salePrice}`;
 
         const swiperWrapper = document.getElementById('swiper-wrapper');
         swiperWrapper.innerHTML = ''; // Clear previous slides
