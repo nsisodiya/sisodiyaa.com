@@ -8,25 +8,9 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script src="https://unpkg.com/@ericblade/quagga2@1.2.6/dist/quagga.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./public-product-info.js"></script>
     <style>
-      #scanner-container {
-        width: 100%;
-        position: relative;
-      }
-      #scanner-container video {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-      #scanner-container .drawingBuffer,
-      #scanner-container canvas {
-        display: none;
-      }
-
       html {
         box-sizing: border-box;
       }
@@ -99,20 +83,6 @@
         text-decoration: none;
         font-weight: bold;
       }
-      .scan-btn {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: #236591;
-        color: white;
-        text-align: center;
-        padding: 18px 0;
-        font-size: 18px;
-        font-weight: bold;
-        z-index: 1000;
-        cursor: pointer;
-      }
       .welcome-message {
         font-size: 38px;
         font-weight: 900;
@@ -127,7 +97,6 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         animation: fadeInScale 1s ease-out;
         max-width: 900px;
-        /* margin-top: 84px; */
         height: 100%;
       }
       @keyframes fadeInScale {
@@ -143,13 +112,15 @@
     </style>
   </head>
   <body>
-    <header>
-      <img src="./doonb2b-color-rect-logo-solid-white-bg.png" alt="Logo" />
-    </header>
-    <div id="scanner-container"></div>
+    <a href="/index.html"
+      ><header>
+        <img src="./doonb2b-color-rect-logo-solid-white-bg.png" alt="Logo" />
+      </header>
+    </a>
+
     <div class="welcome-message">
-      Please click on the <strong>Scan Product</strong> button and scan any
-      Barcode
+      Please select a product by clicking on the
+      <strong>Scan Product</strong> button.
     </div>
     <div class="product">
       <div class="swiper">
@@ -166,17 +137,12 @@
         Share on WhatsApp
       </a>
     </div>
-
-    <div class="scan-btn" onclick="startScanner()">Scan Product</div>
-
     <script>
       let swiper;
 
       function showProduct(data) {
-        addItemCodeToUrl(data.itemCode);
-        document.getElementById('scanner-container').style.display = 'none';
+        addSkuToUrl(data.sku);
         document.querySelector('.welcome-message').style.display = 'none';
-
         document.querySelector('.product').style.display = 'block';
 
         document.getElementById('product-title').textContent = data.title;
@@ -207,8 +173,7 @@
         }
 
         const url = new URL(window.location);
-        const productUrl =
-          url.origin + url.pathname + '?' + `itemCode=${data.itemCode}`;
+        const productUrl = url.origin + url.pathname + '?' + `sku=${data.sku}`;
 
         const shareText = `${data.title} for just *₹${data.salePrice}*! \n\n ${productUrl}`;
         const shareLink = `https://wa.me/?text=${encodeURIComponent(
@@ -217,79 +182,21 @@
         document.getElementById('share-btn').href = shareLink;
       }
 
-      let quaggaStarted = false;
+      function selectProduct() {
+        // Example SKU, replace with your logic to fetch a product by SKU
+        const sku = 'EXAMPLE_SKU'; // Replace with actual SKU value
+        const productData = window.productInfo.skuToProductInfo[sku];
 
-      function startScanner() {
-        clearItemCodeFromUrl();
-        document.querySelector('.welcome-message').style.display = 'none';
-        document.getElementById('scanner-container').style.display = 'block';
-        document.querySelector('.product').style.display = 'none';
-
-        if (quaggaStarted) {
-          Quagga.stop();
+        if (productData) {
+          showProduct(productData);
+        } else {
+          console.warn('Product not found for SKU:', sku);
         }
-
-        Quagga.init(
-          {
-            inputStream: {
-              name: 'Live',
-              type: 'LiveStream',
-              target: document.querySelector('#scanner-container'),
-              constraints: { facingMode: 'environment' }
-            },
-            decoder: {
-              readers: ['ean_reader', 'code_128_reader', 'upc_reader']
-            }
-          },
-          function (err) {
-            if (err) {
-              console.error(err);
-              return;
-            }
-            Quagga.start();
-            quaggaStarted = true;
-          }
-        );
-
-        Quagga.onDetected((result) => {
-          const code = result.codeResult.code;
-          const sku = window.productInfo.itemCodeToSkuMap[code];
-          const productData = sku
-            ? window.productInfo.skuToProductInfo[sku]
-            : null;
-
-          if (productData) {
-            Quagga.offDetected();
-            showProduct(productData);
-            Quagga.stop();
-            quaggaStarted = false;
-          } else {
-            console.warn('SKU not found for item code:', code);
-          }
-        });
       }
 
-      // function shareOnWhatsApp() {
-      //   const itemCode = document.getElementById('sku').innerText.split('_')[0];
-      //   const url = new URL(window.location);
-      //   url.searchParams.set('itemCode', itemCode);
-      //   const productUrl =
-      //     url.origin + url.pathname + '?' + url.searchParams.toString();
-      //   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(
-      //     'Check out this product: ' + productUrl
-      //   )}`;
-      //   window.open(whatsappUrl, '_blank');
-      // }
-
-      function clearItemCodeFromUrl() {
+      function addSkuToUrl(sku) {
         const url = new URL(window.location);
-        url.searchParams.delete('itemCode');
-        window.history.replaceState({}, document.title, url.pathname);
-      }
-
-      function addItemCodeToUrl(itemCode) {
-        const url = new URL(window.location);
-        url.searchParams.set('itemCode', itemCode); // Adds or updates the 'itemCode' parameter
+        url.searchParams.set('sku', sku); // Adds or updates the 'sku' parameter
         window.history.replaceState(
           {},
           document.title,
@@ -299,16 +206,16 @@
 
       window.onload = () => {
         const urlParams = new URLSearchParams(window.location.search);
-        const itemCode = urlParams.get('itemCode');
-        const sku = window.productInfo.itemCodeToSkuMap[itemCode];
+        const sku = urlParams.get('sku');
         const productData = sku
           ? window.productInfo.skuToProductInfo[sku]
           : null;
 
-        if (itemCode && productData) {
+        if (sku && productData) {
           showProduct(productData);
         } else {
-          startScanner();
+          // If no SKU in URL, you can call selectProduct to manually pick a product
+          selectProduct();
         }
       };
     </script>

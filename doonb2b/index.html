@@ -251,36 +251,32 @@
           const div = document.createElement('div');
           div.className = 'product-item';
 
-          // Calculate total items if available
           const totalItems = product.items_per_bag
             ? Math.round(product.closingQuantity * product.items_per_bag)
             : null;
 
-          // Calculate sale price per item if items_per_bag is available
           const salePrice = product.items_per_bag
             ? Math.round(product.salePrice / product.items_per_bag)
             : null;
 
-          // Construct the inner HTML for the product
+          const productUrl = `./info.html?sku=${encodeURIComponent(product.sku)}`;
+
           div.innerHTML = `
-            <div class="product-price">
-              ₹ ${salePrice !== null ? `${salePrice} per item` : product.salePrice}
-            </div>
-            <img src="${getThumbnailImage(product.images[0])}" alt="${product.title}" />
-            <div class="product-title">
-              ${product.sku}
-            </div>
-            <div class="product-title">${product.title}</div>
-            <div class="product-stock">
-              Stock - ${totalItems !== null ? `${totalItems} items` : product.closingQuantity}
-            </div>
+    <a href="${productUrl}" class="product-link" style="text-decoration: none; color: inherit;">
+      <div class="product-price">
+        ₹ ${salePrice !== null ? `${salePrice} per item` : product.salePrice}
+      </div>
+      <img src="${getThumbnailImage(product.images[0])}" alt="${product.title}" />
+      <div class="product-title">${product.sku}</div>
+      <div class="product-title">${product.title}</div>
+      <div class="product-stock">
+        Stock - ${totalItems !== null ? `${totalItems} items` : product.closingQuantity}
+      </div>
+    </a>
+  `;
 
-          `;
-
-          // Append the product item to the product list
           productList.appendChild(div);
         }
-
         function showProducts(catalog) {
           catalogList.classList.add('hidden');
           productListWrapper.classList.remove('hidden');
