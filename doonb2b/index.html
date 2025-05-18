@@ -212,6 +212,10 @@
         for (const sku in productInfo.skuToProductInfo) {
           const product = productInfo.skuToProductInfo[sku];
           if (!catalogData[product.catalog]) {
+            if (!product.images || product.images.length === 0) {
+              console.error(`No images found for product: ${sku}`);
+              continue;
+            }
             catalogData[product.catalog] = product.images[0];
             catalogCounts[product.catalog] = 1;
           } else {
