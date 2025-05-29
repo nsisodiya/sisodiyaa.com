@@ -64,14 +64,13 @@
         font-weight: bold;
         margin-top: 15px;
       }
-      .product-sku {
+      .product-sku,
+      .product-stock,
+      .product-rack {
         color: #666;
         margin: 5px 0;
       }
-      .product-stock {
-        color: #666;
-        margin: 5px 0;
-      }
+
       /* .product-price {
         color: #236591;
         font-size: 22px;
@@ -176,7 +175,10 @@
 
       <div class="product-title" id="product-title"></div>
       <div class="product-sku" id="product-sku"></div>
-      <div class="product-stock" id="product-stock"></div>
+      <div style="display: flex; justify-content: space-between">
+        <div class="product-stock" id="product-stock"></div>
+        <div class="product-rack" id="product-rack"></div>
+      </div>
 
       <a class="share-btn" id="share-btn" href="#" target="_blank">
         Share on WhatsApp
@@ -190,6 +192,11 @@
 
       function showProduct(data) {
         addItemCodeToUrl(data.itemCode);
+        if (locationInfo[data.itemCode] !== undefined) {
+          document.getElementById('product-rack').textContent =
+            `Rack: ${locationInfo[data.itemCode]}`;
+        }
+
         document.getElementById('scanner-container').style.display = 'none';
         document.querySelector('.welcome-message').style.display = 'none';
 
@@ -321,8 +328,57 @@
           url.pathname + url.search
         ); // Update the URL without reloading the page
       }
+      var locationInfo = {};
 
+      var GOOGLE_SHEET_CSV_URL =
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vR_JZW9SR9Gg_t29CdTRIKITIuJZLXgZv2SRXhJ_nM7pa5epmv2AxwFsKO3uVQ4INwrsATii7XytRdV/pub?gid=0&single=true&output=csv';
+
+      function fetchAndConvertCSV() {
+        fetch(GOOGLE_SHEET_CSV_URL)
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (csvText) {
+            var lines = csvText.trim().split('\n');
+            // Clean headers
+            var headers = lines[0].split(',').map(function (h) {
+              return h.trim();
+            });
+
+            var itemCodeIndex = headers.indexOf('ItemCode');
+            var rackIndex = headers.indexOf('Rack');
+
+            var result = {};
+
+            for (var i = 1; i < lines.length; i++) {
+              var values = lines[i].split(',');
+
+              var itemCode =
+                values[itemCodeIndex] && values[itemCodeIndex].trim();
+              var rack = values[rackIndex] && values[rackIndex].trim();
+
+              if (itemCode && rack) {
+                result[itemCode] = rack;
+              }
+            }
+
+            locationInfo = result;
+            // check if itemCode present in url
+            const urlParams = new URLSearchParams(window.location.search);
+            const itemCodeParam = urlParams.get('itemCode');
+            if (itemCodeParam && result[itemCodeParam]) {
+              document.getElementById('product-rack').textContent =
+                `Rack: ${result[itemCode]}`;
+            }
+          })
+          .catch(function (error) {
+            console.error('Error fetching or converting CSV:', error.message);
+          });
+      }
       window.onload = () => {
+        // Call the function on page load
+        fetchAndConvertCSV();
+
         const urlParams = new URLSearchParams(window.location.search);
         const itemCode = urlParams.get('itemCode');
         const sku = window.productInfo.itemCodeToSkuMap[itemCode];
