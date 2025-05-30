@@ -1260,8 +1260,8 @@ window.productInfo = {
     "0159a_liquid_cleaning_brush": {
       "sku": "0159a_liquid_cleaning_brush",
       "itemCode": "0159a",
-      "closingQuantity": 7,
-      "sold": 13,
+      "closingQuantity": 5,
+      "sold": 15,
       "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/5_5a05124d-4031-48fe-918b-065b19f8720e.jpg?v=1737632520",
@@ -1718,8 +1718,8 @@ window.productInfo = {
     "0370_cm_3d_massager": {
       "sku": "0370_cm_3d_massager",
       "itemCode": "0370",
-      "closingQuantity": 8,
-      "sold": 5,
+      "closingQuantity": 7,
+      "sold": 6,
       "catalog": "massager",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/7_389bfee3-8e0b-4cab-a96b-7f68974ecc41.jpg?v=1737629251",
@@ -1905,8 +1905,8 @@ window.productInfo = {
     "0465_flower_cut_any": {
       "sku": "0465_flower_cut_any",
       "itemCode": "0465",
-      "closingQuantity": 6,
-      "sold": 4,
+      "closingQuantity": 5,
+      "sold": 5,
       "catalog": "gardening",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4_2ca5f92e-70e6-452c-a163-858a14f4a493.jpg?v=1737628083",
@@ -2063,8 +2063,8 @@ window.productInfo = {
     "0529_7in1_ss_manicure_set": {
       "sku": "0529_7in1_ss_manicure_set",
       "itemCode": "0529",
-      "closingQuantity": 4,
-      "sold": 1,
+      "closingQuantity": 3,
+      "sold": 2,
       "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_43ce9514-178c-4474-b60b-a3c2ee2d3dc9.jpg?v=1716196006",
@@ -2082,8 +2082,8 @@ window.productInfo = {
     "0537_car_dustbin": {
       "sku": "0537_car_dustbin",
       "itemCode": "0537",
-      "closingQuantity": 3,
-      "sold": 1,
+      "closingQuantity": 2,
+      "sold": 2,
       "catalog": "travel",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/5c496bb97c1021538509e3a2-8-larg_ef622455-bdd9-4df9-afda-22435396c315.jpg?v=1737629244",
@@ -2435,8 +2435,8 @@ window.productInfo = {
     "0631_pizza_cutter": {
       "sku": "0631_pizza_cutter",
       "itemCode": "0631",
-      "closingQuantity": 31,
-      "sold": 9,
+      "closingQuantity": 30,
+      "sold": 10,
       "catalog": "chopper-slicer-cutter",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/063107_f0f26e44-fe7a-41c7-b36a-3d77be52fd7c.jpg?v=1738298120",
@@ -2591,8 +2591,8 @@ window.productInfo = {
     "0701_medium_sink_strainer_med": {
       "sku": "0701_medium_sink_strainer_med",
       "itemCode": "0701",
-      "closingQuantity": 4,
-      "sold": 1,
+      "closingQuantity": 2,
+      "sold": 3,
       "catalog": "kitchen-sink",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4_4eba8f89-7242-4ccc-865a-734c8eb8194f.jpg?v=1737628625",
@@ -2646,8 +2646,8 @@ window.productInfo = {
     "0734_soup_bowl_6pc": {
       "sku": "0734_soup_bowl_6pc",
       "itemCode": "0734",
-      "closingQuantity": 2.67,
-      "sold": 4.33,
+      "closingQuantity": 3.67,
+      "sold": 3.33,
       "items_per_bag": 6,
       "catalog": "kitchen",
       "images": [
@@ -2856,8 +2856,8 @@ window.productInfo = {
     "0827_4pc_ss_cookie_cutter": {
       "sku": "0827_4pc_ss_cookie_cutter",
       "itemCode": "0827",
-      "closingQuantity": 18,
-      "sold": 5,
+      "closingQuantity": 17,
+      "sold": 6,
       "catalog": "chopper-slicer-cutter",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/cookiecutter.jpg?v=1737619602",
@@ -4735,8 +4735,8 @@ window.productInfo = {
     "12260_ss_water_bottle_1000ml": {
       "sku": "12260_ss_water_bottle_1000ml",
       "itemCode": "12260",
-      "closingQuantity": 33,
-      "sold": 21,
+      "closingQuantity": 32,
+      "sold": 22,
       "catalog": "kitchen",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1d6661a5-815f-4a32-9eaa-5987f2644cd6.jpg?v=1739350641",
@@ -5317,8 +5317,8 @@ window.productInfo = {
     "12791_80g_natural_multani_mitti": {
       "sku": "12791_80g_natural_multani_mitti",
       "itemCode": "12791",
-      "closingQuantity": 8,
-      "sold": 21,
+      "closingQuantity": 7,
+      "sold": 22,
       "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_725367d7-3b1d-40b5-a4c2-c331ffc12012.jpg?v=1737622842",
@@ -6014,8 +6014,8 @@ window.productInfo = {
     "1360_8_5_inch_brighter_tablet": {
       "sku": "1360_8_5_inch_brighter_tablet",
       "itemCode": "1360",
-      "closingQuantity": 6,
-      "sold": 4,
+      "closingQuantity": 5,
+      "sold": 5,
       "catalog": "toys",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7_492316c4-2788-435e-bbee-6b9b2dd7a1a9.jpg?v=1737623817",
@@ -6315,8 +6315,8 @@ window.productInfo = {
     "13823_8_in_1_manicure_set_tool_kit": {
       "sku": "13823_8_in_1_manicure_set_tool_kit",
       "itemCode": "13823",
-      "closingQuantity": 11,
-      "sold": 7,
+      "closingQuantity": 10,
+      "sold": 8,
       "catalog": "beauty-&-personal-care",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/07_ec450ae8-9686-4ffc-bf43-23019ea8159a.jpg?v=1738214518",
@@ -6653,8 +6653,8 @@ window.productInfo = {
     "13971_beauti_makeup_set_at58": {
       "sku": "13971_beauti_makeup_set_at58",
       "itemCode": "13971",
-      "closingQuantity": 4,
-      "sold": 1,
+      "closingQuantity": 3,
+      "sold": 2,
       "catalog": "toys",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_98de3679-1818-4719-8ef2-ae52303b9fb6.jpg?v=1739172210",
@@ -8690,8 +8690,8 @@ window.productInfo = {
     "18058_mini_bouncy_basketball_1pc": {
       "sku": "18058_mini_bouncy_basketball_1pc",
       "itemCode": "18058",
-      "closingQuantity": 5,
-      "sold": 8,
+      "closingQuantity": 4,
+      "sold": 9,
       "catalog": "toys",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_fa9498dd-37ea-4246-b6c5-73abbfad8011.jpg?v=1737621187",
@@ -8902,8 +8902,8 @@ window.productInfo = {
     "18246_projector_lamp_with_8_slides_patterns": {
       "sku": "18246_projector_lamp_with_8_slides_patterns",
       "itemCode": "18246",
-      "closingQuantity": 9,
-      "sold": 7,
+      "closingQuantity": 8,
+      "sold": 8,
       "catalog": "toys",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_9bcfe17d-d1ff-4b1f-8d4d-95993a9c04ff.jpg?v=1737615853",
@@ -10179,8 +10179,8 @@ window.productInfo = {
     "19273_light_blue_plastic_soap_box": {
       "sku": "19273_light_blue_plastic_soap_box",
       "itemCode": "19273",
-      "closingQuantity": 7,
-      "sold": 1,
+      "closingQuantity": 6,
+      "sold": 2,
       "catalog": "unknown",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_f2820585-c9a7-4466-a11c-cc25c1acc0fd.jpg?v=1747460846",
@@ -14044,8 +14044,8 @@ window.productInfo = {
     "4705_50pc_pyramid_stand": {
       "sku": "4705_50pc_pyramid_stand",
       "itemCode": "4705",
-      "closingQuantity": 1.32,
-      "sold": 2.68,
+      "closingQuantity": 1.3,
+      "sold": 2.7,
       "items_per_bag": 50,
       "catalog": "electronics-accessories",
       "images": [
@@ -14204,8 +14204,8 @@ window.productInfo = {
     "4794_fancy_leaf_soap_box": {
       "sku": "4794_fancy_leaf_soap_box",
       "itemCode": "4794",
-      "closingQuantity": 14,
-      "sold": 12,
+      "closingQuantity": 13,
+      "sold": 13,
       "catalog": "cleaning",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/02_80aca97f-b6a5-4398-b38a-54f524841624.jpg?v=1737631922",
@@ -14272,8 +14272,8 @@ window.productInfo = {
     "4822_hanging_planter_pot": {
       "sku": "4822_hanging_planter_pot",
       "itemCode": "4822",
-      "closingQuantity": 4,
-      "sold": 6,
+      "closingQuantity": 2,
+      "sold": 8,
       "catalog": "gardening",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_51e81dc6-da21-48a0-9ef6-cb92007013e7.jpg?v=1738298499",
@@ -15038,8 +15038,8 @@ window.productInfo = {
     "5623_18_grid_egg_storage_box_brown": {
       "sku": "5623_18_grid_egg_storage_box_brown",
       "itemCode": "5623",
-      "closingQuantity": 10,
-      "sold": 6,
+      "closingQuantity": 9,
+      "sold": 7,
       "catalog": "eggs",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/06_b1e325e9-c55a-4ffd-ac05-609463440542.jpg?v=1737623144",
@@ -16175,8 +16175,8 @@ window.productInfo = {
     "7021_multi_flour_sieve_cup": {
       "sku": "7021_multi_flour_sieve_cup",
       "itemCode": "7021",
-      "closingQuantity": 2,
-      "sold": 0,
+      "closingQuantity": 1,
+      "sold": 1,
       "catalog": "kitchen-accessories",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/28ac3be3-ae4f-4943-bec3-c5189762cb49.jpg?v=1737627775",
