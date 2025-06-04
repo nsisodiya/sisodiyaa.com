@@ -845,7 +845,6 @@ window.productInfo = {
     "0740": "0740_simple_puri_press",
     "0749": "0749_bathroom_broom",
     "0754": "0754_dumbbells_bottle",
-    "0761": "0761_folding_carry_bag",
     "0762": "0762_faucet_caddy",
     "0773": "0773_multi_shape_mould",
     "0790": "0790_ss_sink_strainer_large",
@@ -1414,8 +1413,8 @@ window.productInfo = {
     "0253_bokoma_head_massager": {
       "sku": "0253_bokoma_head_massager",
       "itemCode": "0253",
-      "closingQuantity": 12,
-      "sold": 14,
+      "closingQuantity": 11,
+      "sold": 15,
       "catalog": "massager",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/bokolast.jpg?v=1737629604",
@@ -2503,26 +2502,6 @@ window.productInfo = {
       "title": "Dumbbell Water Bottle Gym Water Bottle Use For School , Gym , Office Use (750 ml)",
       "salePrice": 57
     },
-    "0761_folding_carry_bag": {
-      "sku": "0761_folding_carry_bag",
-      "itemCode": "0761",
-      "closingQuantity": 2,
-      "sold": 4,
-      "catalog": "kitchen-bowl-&-basket",
-      "images": [
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_22ea4186-29fa-421d-9afe-a4dfeb0a5679.jpg?v=1737625012",
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/8332c0fb-c2c8-4b48-b04b-acb40ecd1202.jpg?v=1737625012",
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/04_36c9394b-2d0f-4dc2-b77a-a81e042db870.jpg?v=1737625013",
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_98359536-3f7c-4444-bd87-59a3852429f4.jpg?v=1737625013",
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/00.jpg?v=1737625013",
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/06_69f0d554-7686-4874-8515-4f0bcbb78453.jpg?v=1737625013",
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_7383938c-b364-48be-9e1d-bd4f4bb9c486.jpg?v=1737625013",
-        "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/a93e4ffc-a65e-4179-b2ec-9e07166129c8.jpg?v=1737625013"
-      ],
-      "handle": "foldable-fabric-bag-for-grocery-vegetables",
-      "title": "Grocery Vegetable Foldable Smiley Non-Woven Fabric Shopping Bag",
-      "salePrice": 79
-    },
     "0762_faucet_caddy": {
       "sku": "0762_faucet_caddy",
       "itemCode": "0762",
@@ -3351,8 +3330,8 @@ window.productInfo = {
     "10246_plastic_egg_yolk_separator_1pc": {
       "sku": "10246_plastic_egg_yolk_separator_1pc",
       "itemCode": "10246",
-      "closingQuantity": 19,
-      "sold": 11,
+      "closingQuantity": 18,
+      "sold": 12,
       "catalog": "eggs",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/08_87ff2f69-41bc-4c99-beeb-9c813d262f8a.jpg?v=1737616706",
@@ -7302,8 +7281,8 @@ window.productInfo = {
     "1576_garbage_bags_30x50": {
       "sku": "1576_garbage_bags_30x50",
       "itemCode": "1576",
-      "closingQuantity": -14,
-      "sold": 19,
+      "closingQuantity": -15,
+      "sold": 20,
       "catalog": "garbage-bags",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/15761.jpg?v=1738324083",
@@ -7828,8 +7807,8 @@ window.productInfo = {
     "17635_web_shooter_toy_1_set_loose": {
       "sku": "17635_web_shooter_toy_1_set_loose",
       "itemCode": "17635",
-      "closingQuantity": 4,
-      "sold": 6,
+      "closingQuantity": 3,
+      "sold": 7,
       "catalog": "toys",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_829ff39e-e75c-4056-ae51-effae74450ea.jpg?v=1737624086",
@@ -11556,8 +11535,8 @@ window.productInfo = {
     "2571_n3_10inch_ss_whisk": {
       "sku": "2571_n3_10inch_ss_whisk",
       "itemCode": "2571",
-      "closingQuantity": 6,
-      "sold": 4,
+      "closingQuantity": 5,
+      "sold": 5,
       "catalog": "kitchen-accessories",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/08_46f784d7-1c95-4241-b424-d9838323b6f5.jpg?v=1738409176",
@@ -11640,8 +11619,8 @@ window.productInfo = {
     "2618_2in1_y_veg_peeler": {
       "sku": "2618_2in1_y_veg_peeler",
       "itemCode": "2618",
-      "closingQuantity": 4,
-      "sold": 6,
+      "closingQuantity": 3,
+      "sold": 7,
       "catalog": "knife-&-cutlery",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/07_9f73da0b-c446-47ee-b799-38855bfa48bd.jpg?v=1737631476",
@@ -14083,8 +14062,8 @@ window.productInfo = {
     "4855_2pair_large_blue_gloves": {
       "sku": "4855_2pair_large_blue_gloves",
       "itemCode": "4855",
-      "closingQuantity": 3,
-      "sold": 4,
+      "closingQuantity": 2,
+      "sold": 5,
       "catalog": "gloves",
       "images": [
         "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4_a7b05d57-7bf2-4f45-8a0d-fcae95af3e29.jpg?v=1737619187",
