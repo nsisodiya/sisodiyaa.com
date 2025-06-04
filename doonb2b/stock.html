@@ -101,6 +101,59 @@
         border: 3px solid #b00000;
       }
 
+      /* Modal styles */
+      #modalOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      #modal {
+        background: white;
+        padding: 20px 25px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 320px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+      #modal label {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+      }
+      #modal input[type='number'] {
+        width: 100%;
+        font-size: 18px;
+        padding: 8px 10px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      #modal button {
+        padding: 10px 18px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+      #modal button.save-btn {
+        background-color: #236591;
+        color: white;
+        margin-right: 10px;
+      }
+      #modal button.cancel-btn {
+        background-color: #ccc;
+        color: #333;
+      }
+
       @media print {
         body {
           margin: 0;
@@ -117,8 +170,41 @@
     </style>
   </head>
   <body>
+    <h2 class="no-print">DoonB2B Stock Report Sheet</h2>
+    <button class="no-print clear-btn">Clear Local Storage</button>
+    <div id="cards-container" class="all-cards"></div>
+
+    <!-- Modal -->
+    <div
+      id="modalOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalLabel"
+    >
+      <div id="modal">
+        <label id="modalLabel" for="qtyInput">Enter counted quantity</label>
+        <input type="number" id="qtyInput" min="0" />
+        <div>
+          <button class="save-btn">Save</button>
+          <button class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
     <script>
       const STORAGE_KEY = 'dehradun-doonb2b-stock-check';
+
+      const container = document.getElementById('cards-container');
+      const clearBtn = document.querySelector('.clear-btn');
+      const modalOverlay = document.getElementById('modalOverlay');
+      const qtyInput = document.getElementById('qtyInput');
+      const saveBtn = modalOverlay.querySelector('.save-btn');
+      const cancelBtn = modalOverlay.querySelector('.cancel-btn');
+      const modalLabel = document.getElementById('modalLabel');
+
+      let currentSku = null;
+      let currentCard = null;
+      let currentTotalQty = 0;
 
       function getThumbnailImage(url) {
         return url.replace(
@@ -140,24 +226,29 @@
         location.reload();
       }
 
+      function closeModal() {
+        modalOverlay.style.display = 'none';
+        qtyInput.value = '';
+        currentSku = null;
+        currentCard = null;
+        currentTotalQty = 0;
+      }
+
+      function openModal(sku, card, totalQty, enteredQty) {
+        currentSku = sku;
+        currentCard = card;
+        currentTotalQty = totalQty;
+
+        modalLabel.textContent = `Enter counted quantity for SKU: ${sku} (Expected: ${totalQty})`;
+        qtyInput.value = enteredQty !== null ? enteredQty : '';
+        qtyInput.focus();
+        qtyInput.select();
+        modalOverlay.style.display = 'flex';
+      }
+
       function renderCards(data) {
-        const heading = document.createElement('h2');
-        heading.className = 'no-print';
-        heading.textContent = 'DoonB2B Stock Report Sheet';
-        document.body.appendChild(heading);
-
-        const clearBtn = document.createElement('button');
-        clearBtn.className = 'no-print clear-btn';
-        clearBtn.textContent = 'Clear Local Storage';
-        clearBtn.addEventListener('click', clearLocalStorage);
-        document.body.appendChild(clearBtn);
-
-        const container = document.createElement('div');
-        container.id = 'cards-container';
-        container.className = 'all-cards';
-        document.body.appendChild(container);
-
         const stockMap = loadFromLocalStorage();
+        container.innerHTML = '';
 
         Object.entries(data).forEach(([sku, product]) => {
           const totalQty = product.items_per_bag
@@ -165,9 +256,8 @@
             : product.closingQuantity;
 
           const enteredQty = stockMap[sku] ? parseInt(stockMap[sku]) : null;
-          // If quantity matched or exceeded, skip rendering card
           if (enteredQty !== null && enteredQty >= totalQty) {
-            return;
+            return; // fully counted, skip rendering
           }
 
           const image = getThumbnailImage(product.images?.[0] || '');
@@ -185,7 +275,6 @@
             <div class="qty">${qtyLabel}</div>
           `;
 
-          // If previously entered qty less than totalQty, show red border + missing label
           if (enteredQty !== null && enteredQty < totalQty) {
             card.classList.add('missing-stock');
             const missingCount = totalQty - enteredQty;
@@ -196,38 +285,56 @@
           }
 
           card.addEventListener('click', () => {
-            let userInput = prompt(
-              `Enter counted quantity for SKU: ${sku}\nExpected: ${totalQty}`,
-              enteredQty !== null ? enteredQty : ''
-            );
-            if (userInput === null) return; // cancelled
-
-            userInput = parseInt(userInput);
-            if (isNaN(userInput) || userInput < 0) {
-              alert('Please enter a valid non-negative number');
-              return;
-            }
-
-            stockMap[sku] = userInput;
-            saveToLocalStorage(stockMap);
-
-            if (userInput >= totalQty) {
-              card.remove();
-            } else {
-              card.classList.add('missing-stock');
-              let missingDiv = card.querySelector('.missing');
-              if (!missingDiv) {
-                missingDiv = document.createElement('div');
-                missingDiv.className = 'missing';
-                card.appendChild(missingDiv);
-              }
-              missingDiv.textContent = `${totalQty - userInput} missing`;
-            }
+            openModal(sku, card, totalQty, enteredQty);
           });
 
           container.appendChild(card);
         });
       }
+
+      clearBtn.addEventListener('click', clearLocalStorage);
+
+      saveBtn.addEventListener('click', () => {
+        const val = parseInt(qtyInput.value);
+        if (isNaN(val) || val < 0) {
+          alert('Please enter a valid non-negative number');
+          qtyInput.focus();
+          return;
+        }
+
+        const stockMap = loadFromLocalStorage();
+        stockMap[currentSku] = val;
+        saveToLocalStorage(stockMap);
+
+        if (val >= currentTotalQty) {
+          currentCard.remove();
+        } else {
+          currentCard.classList.add('missing-stock');
+          let missingDiv = currentCard.querySelector('.missing');
+          if (!missingDiv) {
+            missingDiv = document.createElement('div');
+            missingDiv.className = 'missing';
+            currentCard.appendChild(missingDiv);
+          }
+          missingDiv.textContent = `${currentTotalQty - val} missing`;
+        }
+
+        closeModal();
+      });
+
+      cancelBtn.addEventListener('click', closeModal);
+
+      // Close modal if click outside modal content
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+
+      // Handle Escape key to close modal
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.style.display === 'flex') {
+          closeModal();
+        }
+      });
 
       document.addEventListener('DOMContentLoaded', () => {
         const data = window.productInfo?.skuToProductInfo || {};
