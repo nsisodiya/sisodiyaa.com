@@ -261,7 +261,7 @@
           }
 
           const image = getThumbnailImage(product.images?.[0] || '');
-          const price = Math.round(product.salePrice * 1.1);
+          const price = product.salePrice;
           const qtyLabel = product.items_per_bag
             ? totalQty + ' items'
             : totalQty;
