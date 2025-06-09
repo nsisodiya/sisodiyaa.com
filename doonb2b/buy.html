@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoonB2B – All Products</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: #236591;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .search-bar {
+        text-align: center;
+        padding: 1rem;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .search-bar input {
+        width: 80%;
+        max-width: 400px;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.2s ease;
+      }
+
+      .product-card:hover {
+        transform: scale(1.02);
+      }
+
+      .product-card img {
+        max-width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+      }
+
+      .title {
+        font-size: 0.95rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+        text-align: center;
+      }
+
+      .sku {
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .price {
+        font-size: 1rem;
+        color: #236591;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .cart-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .qty-btn {
+        background: #236591;
+        color: white;
+        border: none;
+        width: 28px;
+        height: 28px;
+        font-size: 1.2rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .qty-display {
+        min-width: 24px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .add-cart-btn {
+        background: #236591;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .add-cart-btn:hover {
+        background: #1a4f75;
+      }
+
+      .floating-cart-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #236591;
+        color: white;
+        padding: 12px 18px;
+        font-size: 1rem;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+      }
+    </style>
+  </head>
+  <body>
+    <header>🛒 DoonB2B – All Products</header>
+
+    <div class="search-bar">
+      <input
+        type="text"
+        placeholder="Search products by title or SKU..."
+        oninput="renderProducts(this.value)"
+      />
+    </div>
+
+    <div class="product-list" id="productList"></div>
+
+    <a href="cart.html" class="floating-cart-btn">🛒 Cart</a>
+
+    <script src="./public-product-info.js"></script>
+    <script>
+      function getCart() {
+        return JSON.parse(localStorage.getItem('doonb2b_cart') || '{}');
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem('doonb2b_cart', JSON.stringify(cart));
+      }
+
+      function addToCart(sku) {
+        const cart = getCart();
+        if (!cart[sku]) cart[sku] = 0;
+        cart[sku]++;
+        saveCart(cart);
+        renderProducts(document.querySelector('.search-bar input').value);
+      }
+
+      function decreaseCart(sku) {
+        const cart = getCart();
+        if (cart[sku]) {
+          cart[sku]--;
+          if (cart[sku] <= 0) {
+            delete cart[sku];
+          }
+          saveCart(cart);
+          renderProducts(document.querySelector('.search-bar input').value);
+        }
+      }
+
+      function getThumbnailImage(url) {
+        return url.replace(
+          /(\.jpg|\.png|\.webp|\.jpeg)(\?.*)?$/,
+          '_150x150$1$2'
+        );
+      }
+
+      function renderProducts(searchText = '') {
+        const container = document.getElementById('productList');
+        container.innerHTML = '';
+        const lowerSearch = searchText.toLowerCase();
+        const cart = getCart();
+
+        for (const sku in window.productInfo.skuToProductInfo) {
+          const product = window.productInfo.skuToProductInfo[sku];
+          const salePrice = product.items_per_bag
+            ? Math.round(product.salePrice / product.items_per_bag)
+            : product.salePrice;
+
+          if (
+            product.title.toLowerCase().includes(lowerSearch) ||
+            sku.toLowerCase().includes(lowerSearch)
+          ) {
+            const qty = cart[sku] || 0;
+            const card = document.createElement('div');
+            card.className = 'product-card';
+
+            card.innerHTML = `
+            <img src="${getThumbnailImage(product.images[0])}" alt="${product.title}" />
+            <div class="title">${product.title}</div>
+            <div class="sku">SKU: ${sku}</div>
+            <div class="price">₹ ${salePrice}</div>
+            <div class="cart-controls">
+              ${
+                qty > 0
+                  ? `
+                <button class="qty-btn" onclick="decreaseCart('${sku}')">−</button>
+                <span class="qty-display">${qty}</span>
+                <button class="qty-btn" onclick="addToCart('${sku}')">+</button>
+              `
+                  : `<button class="add-cart-btn" onclick="addToCart('${sku}')">Add to Cart</button>`
+              }
+            </div>
+          `;
+            container.appendChild(card);
+          }
+        }
+      }
+
+      window.addEventListener('load', () => renderProducts());
+    </script>
+  </body>
+</html>
