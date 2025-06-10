@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Cart – DoonB2B</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -93,6 +94,23 @@
         font-size: 1.2rem;
         color: #777;
       }
+
+      .download-btn {
+        display: block;
+        margin: 1rem auto;
+        padding: 0.7rem 1.5rem;
+        background: #236591;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .download-btn:hover {
+        background: #1b4f72;
+      }
     </style>
   </head>
   <body>
@@ -101,6 +119,8 @@
     <div class="cart-container" id="cartContainer">
       <!-- cart items will be rendered here -->
     </div>
+
+    <button class="download-btn" id="downloadBtn">Download Cart</button>
 
     <script src="./public-product-info.js"></script>
     <script>
@@ -120,7 +140,7 @@
             delete cart[sku];
           }
           saveCart(cart);
-          renderCart(); // re-render
+          renderCart();
         }
       }
 
@@ -134,7 +154,7 @@
       function renderCart() {
         const cart = getCart();
         const container = document.getElementById('cartContainer');
-        container.innerHTML = ''; // clear
+        container.innerHTML = '';
 
         if (Object.keys(cart).length === 0) {
           container.innerHTML = `<div class="empty-msg">Your cart is empty.</div>`;
@@ -170,6 +190,28 @@
           container.appendChild(itemDiv);
         }
       }
+
+      function downloadCart() {
+        const cart = getCart();
+        if (Object.keys(cart).length === 0) {
+          alert('No items in cart to download.');
+          return;
+        }
+
+        const cartData = Object.entries(cart).map(([sku, order_qty]) => {
+          return {
+            sku: sku,
+            order_qty: order_qty
+          };
+        });
+
+        const ws = XLSX.utils.json_to_sheet(cartData);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Cart');
+        XLSX.writeFile(wb, 'cart.xlsx');
+      }
+
+      document.getElementById('downloadBtn').onclick = downloadCart;
 
       window.addEventListener('load', renderCart);
     </script>
