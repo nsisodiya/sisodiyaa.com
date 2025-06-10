@@ -200,6 +200,7 @@
 
         for (const sku in window.productInfo.skuToProductInfo) {
           const product = window.productInfo.skuToProductInfo[sku];
+          const stock = product.closingQuantity;
           const salePrice = product.items_per_bag
             ? Math.round(product.salePrice / product.items_per_bag)
             : product.salePrice;
@@ -217,6 +218,7 @@
             <div class="title">${product.title}</div>
             <div class="sku">SKU: ${sku}</div>
             <div class="price">₹ ${salePrice}</div>
+            <div class="stock">Stock : ${stock}</div>
             <div class="cart-controls">
               ${
                 qty > 0
